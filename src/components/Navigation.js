@@ -19,11 +19,18 @@ function NavBar() {
             <NavButton text='Women' location='/shop/category'/>
             <NavButton text='Teen' location='/shop/category'/>
             <NavButton text='USOLE' location='/'/>
-            <NavButton text='About Us' location='/aboutUs'/>
+            <NavButton text='About Us' location='/aboutus'/>
             <NavButton text='Sustainability' location='/sustainability'/>
             <NavButton text='Log in' location='/login' />
         </div>
     )
+}
 
+export function Footer() {
+    return (
+        <div className={styles.footer}>
+            <p>footer links and logo</p>
+        </div>
+    )
 }
 export default NavBar

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import NavBar from '../components/Navigation'
+import { Footer } from '../components/Navigation'
 import styles from '../styles/Layout.module.css'
 
 function Layout({ title, children}) {
@@ -13,6 +14,7 @@ function Layout({ title, children}) {
             <div className={styles.main}>
                 {children}
             </div>
+            <Footer/>
         </div>
     )
 }
