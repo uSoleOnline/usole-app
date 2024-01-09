@@ -1,0 +1,77 @@
+.cover {
+    height: 150vh;
+    background-color: #000000;
+    border: none;
+    margin-bottom: -5px;
+}
+.caption {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-family: OpenSauce Black;
+    position: relative;
+    top: -80vh;
+    left: 6vw;
+}
+.title {
+    width: 80%;
+    color: #FFFFFF;
+    font-size: 186px;
+    font-family: Lovelo;
+    font-weight: 900;
+    text-align: left;
+    line-height: 245px;
+    position: relative;
+    top: -105vh;
+    left: 5vw;
+}
+.subtitle {
+    width: 80%;
+    color: #FFFFFF;
+    font-size: 96px;
+    font-family: OpenSauce Bold;
+    font-weight: 900;
+    line-height: 164px;
+    text-align: left;
+    position: relative;
+    top: -125vh;
+    left: 5vw;
+}
+.block {
+    padding: 4.5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10%;
+}
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.name {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-family: OpenSauce Black;
+    font-size: 28px;
+    text-align: center;
+}
+.position {
+    margin: 0px;
+    font-family: Lovelo;
+    font-size: 18px;
+    text-align: center;
+}
+.description {
+    font-family: OpenSauce;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+}
