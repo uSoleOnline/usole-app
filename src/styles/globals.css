@@ -2,11 +2,24 @@
     box-sizing: border-box;
     font-family: var(--font-inter);
     -ms-overflow-style: none;
-    scrollbar-width: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
     *::-webkit-scrollbar {
         display: none;
+        /* width: 10px;
+        position: fixed; */
     }
+    /* *::-webkit-scrollbar-track {
+        border-radius: 20px;
+    }
+    *::-webkit-scrollbar-thumb {
+        background: #00000015;
+        border-radius: 5px;
+    } */
 html, body {
     margin: 0;
     padding: 0;
@@ -21,4 +34,28 @@ button, input {
 }
 input[type='text'] {
     cursor: text;
+}
+@font-face {
+    font-family: Lovelo;
+    src: url('/fonts/Lovelo Black.otf');
+}
+@font-face {
+    font-family: Lovelo Line Black;
+    src: url('/fonts/Lovelo Line Black.otf');
+}
+@font-face {
+    font-family: Lovelo Line Light;
+    src: url('/fonts/Lovelo Line Light.otf');
+}
+@font-face {
+    font-family: OpenSauce;
+    src: url('/fonts/OpenSauceOne-SemiBold.ttf');
+}
+@font-face {
+    font-family: OpenSauce Bold;
+    src: url('/fonts/OpenSauceSans-Bold.ttf');
+}
+@font-face {
+    font-family: OpenSauce Black;
+    src: url('/fonts/OpenSauceTwo-Black.ttf');
 }
