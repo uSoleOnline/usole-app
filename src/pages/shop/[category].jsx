@@ -40,7 +40,7 @@ function Category(props) {
     return (
         <ShopSoles category={props.CATEGORY} deals={props.DEALS}>
             <p className={styles.category}>Shopping</p>
-            <div className={styles.products}>
+            <div className={styles.products} style={{marginBottom: '15%'}}>
                 <Product product={product}/>
                 <Product product={product}/>
                 <Product product={product}/>
