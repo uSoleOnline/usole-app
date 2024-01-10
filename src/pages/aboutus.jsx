@@ -40,7 +40,7 @@ function AboutUs() {
                     style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)'}}
                 />
                 <p className={styles.caption}>Our mission</p>
-                <p className={styles.title}>Protect the earth,</p>
+                <p className={styles.title}>Protect the earth</p>
                 <p className={styles.subtitle}>one eco-friendly shoe sole at a time.</p>
             </div>
             <Section orient='center'>
