@@ -12,6 +12,23 @@
 	display: flex;
 	justify-content: center;
 }
+.annoucement {
+    background-color: #DDDDDD;
+    height: 60px;
+    padding: 20px;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: OpenSauce;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: underline;
+    text-align: center;
+}
+    .annoucement:hover {
+        cursor: pointer;
+    }
 .section {
     width: 100%;
     padding: 4%;
@@ -40,6 +57,7 @@
     align-self: center;
 }
 .header {
+    width: 100%;
     margin: 0px;
     margin-bottom: 30px;
     font-family: Lovelo;
@@ -67,8 +85,7 @@
     align-self: center;
 }
 .slider {
-    max-width: 100vw;
-    margin: 6%;
+    width: 100%;
     display: inline-flex;
     align-items: center;
     overflow-x: auto;
@@ -94,7 +111,7 @@
     left: 0;
 }
     .arrowLeft:hover {
-        border-right: 30px solid #000000;
+        border-right: 30px solid #454545;
         cursor: pointer;
     }
 .arrowRight {
@@ -111,3 +128,22 @@
         border-left: 30px solid #454545;
         cursor: pointer;
     }
+.arrowDown {
+    width: 0;  
+    height: 0;  
+    border-left: 30px solid transparent; 
+    border-right: 30px solid transparent;
+    border-top: 30px solid #000000; 
+    align-self: center;
+}
+    .arrowDown:hover {
+        border-top: 30px solid #454545;
+        cursor: pointer;
+    }
+.seeMore {
+    margin: 0px;
+    margin-bottom: 10px;
+    font-family: OpenSauce;
+    font-size: 18px;
+    text-align: center;
+}

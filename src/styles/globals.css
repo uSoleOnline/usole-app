@@ -41,11 +41,11 @@ input[type='text'] {
 }
 @font-face {
     font-family: Lovelo Line Black;
-    src: url('/fonts/Lovelo Line Black.otf');
+    src: url('/fonts/LoveloLineBlack.otf');
 }
 @font-face {
     font-family: Lovelo Line Light;
-    src: url('/fonts/Lovelo Line Light.otf');
+    src: url('/fonts/LoveloLineLight.otf');
 }
 @font-face {
     font-family: OpenSauce;

@@ -1,5 +1,6 @@
 import styles from '../styles/Utilities.module.css'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 function CoverImage({ src }) {
     return (
@@ -27,11 +28,20 @@ export function Cover({ images }) {
     )
 }
 
+export function Annoucement({ location, children }) {
+    const router = useRouter()
+    return (
+        <div className={styles.annoucement}>
+            <p onClick={() => router.push(location)}>{children}</p>
+        </div>
+    )
+}
+
 export function Section({ orient='center', img='', background='#FFFFFF', children }) {
     if (orient == 'center' && img == '') {
         return (
             <div className={styles.section} style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
-                <div style={{display: 'flex', flexDirection: 'column'}}>
+                <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
                     {children}
                 </div>
             </div>
@@ -112,7 +122,7 @@ function SliderImage({ src }) {
     )
 }
 
-function slide(id, scrollFactor) {
+export function slide(id, scrollFactor) {
     const slider = document.getElementById(id)
     slider.scrollBy({
         top: 0,
@@ -121,16 +131,37 @@ function slide(id, scrollFactor) {
     })
 }
 
-export function Slider({ id, scrollFactor }) {
+export function Arrow({ side, onClick }) {
+    var style = styles.arrowLeft
+    if (side == 'right') {
+        style = styles.arrowRight
+    } else if (side =='down') {
+        style = styles.arrowDown
+    }
     return (
-        <div className={styles.slider} id={id}>
-            <div className={styles.arrowLeft} onClick={() => slide(id, -scrollFactor)}></div>
+        <div className={style} onClick={onClick}></div>
+    )
+}
+
+export function Slider({ id, scrollFactor, style }) {
+    return (
+        <div className={styles.slider} id={id} style={style}>
+            <Arrow side='left' onClick={() => slide(id, -scrollFactor)}/>
             <SliderImage src='/shoe1.jpg'/>
             <SliderImage src='/shoe2.jpg'/>
             <SliderImage src='/shoe3.jpg'/>
             <SliderImage src='/shoe4.jpg'/>
             <SliderImage src='/shoe5.jpg'/>
-            <div className={styles.arrowRight} onClick={() => slide(id, scrollFactor)}></div>
+            <Arrow side='right' onClick={() => slide(id, scrollFactor)}/>
+        </div>
+    )
+}
+
+export function SeeMore() {
+    return (
+        <div style={{marginTop: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+            <p className={styles.seeMore}>See more</p>
+            <Arrow side='down'/>
         </div>
     )
 }

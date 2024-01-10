@@ -4,24 +4,31 @@ import { useRouter } from 'next/navigation'
 function NavButton({ text, location }) {
     const router = useRouter()
     return (
-        <button
-            className={styles.navButton}
-            onClick={() => router.push((location))}>
+        <button className={styles.navButton} onClick={() => router.push((location))}>
             {text}
         </button>
     )
 }
 
 function NavBar() {
+    const router = useRouter()
     return (
         <div className={styles.navBar}>
-            <NavButton text='Men' location='/shop/category'/>
-            <NavButton text='Women' location='/shop/category'/>
-            <NavButton text='Teen' location='/shop/category'/>
-            <NavButton text='USOLE' location='/'/>
-            <NavButton text='About Us' location='/aboutus'/>
-            <NavButton text='Sustainability' location='/sustainability'/>
-            <NavButton text='Log in' location='/login' />
+            <div className={styles.section} style={{justifyContent: 'flex-start'}}>
+                <NavButton text='Shop' location='/shop'/>
+                <NavButton text='Soles' location='/shop'/>
+                <NavButton text='Kits' location='/shop'/>
+            </div>
+            <div className={styles.section}>
+                <button className={styles.logo} onClick={() => router.push(('/'))}>
+                    USOLE
+                </button>
+            </div>
+            <div className={styles.section} style={{justifyContent: 'flex-end'}}>
+                <NavButton text='About Us' location='/aboutus'/>
+                <NavButton text='Sustainability' location='/sustainability'/>
+                <NavButton text='Log in' location='/login'/>
+            </div>
         </div>
     )
 }

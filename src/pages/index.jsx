@@ -1,24 +1,17 @@
 import styles from '@/styles/Home.module.css'
 import Layout from '../components/Layout'
 import Image from 'next/image'
-import { Cover, Section, Slider, Header, Description, Button } from '../components/Utilities'
+import { Cover, Annoucement, Section, Slider, Header, Description, Button } from '../components/Utilities'
 import { useRouter } from 'next/router'
-
-function Annoucement({ text }) {
-    const router = useRouter()
-    return (
-        <div className={styles.annoucement}>
-            <p onClick={() => router.push('/shop')}>{text}</p>
-        </div>
-    )
-}
 
 function Home() {
     const router = useRouter()
     return (
         <Layout title='Home'>
-            <Annoucement text='Happy New Years! Come and see our holiday sales events!'/>
-            <Cover images={['/cover1.jpg', '/cover4.jpg', '/cover2.jpg']}/>
+            <Annoucement location='/shop'>
+                Happy New Years! Come and see our holiday sales events!
+            </Annoucement>
+            <Cover images={['/cover4.jpg', '/cover2.jpg', '/cover1.jpg']}/>
             <Section orient='center'>
                 <Header>Power in every step.</Header>
                 <Description>
@@ -27,7 +20,7 @@ function Home() {
                 <Button style={{marginBottom: '75px'}} onClick={() => router.push('/shop')}>
                     Shop Now
                 </Button>
-            </Section>
+            </Section>                                                                
             <Section orient='left' img='/cover8.jpg' background='#000000'>
                 <Header>Robust design.</Header>
                 <Description>
@@ -47,11 +40,11 @@ function Home() {
                 </Description>
             </Section>
             <Section orient='center'>
-                <Header style={{marginTop: '75px'}}>For all your favorite models.</Header>
-                <Description style={{margin: '0px'}}>
+                <Header style={{marginTop: '75px', marginBottom: '-15px'}}>All your favorite models.</Header>
+                <Description style={{marginBottom: '50px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
                 </Description>
-                <Slider id='homePageSlider' scrollFactor={500}/>
+                <Slider id='homePageSlider' scrollFactor={500} style={{marginBottom: '75px'}}/>
             </Section>
         </Layout>
     )
