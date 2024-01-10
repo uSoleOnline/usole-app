@@ -157,6 +157,37 @@ export function Slider({ id, scrollFactor, style }) {
     )
 }
 
+function Colors({ colors }) {
+    return (
+        <div style={{display: 'inline-flex', marginTop: '5px'}}>
+            {colors.map((color) => 
+                <div className={styles.color} style={{backgroundColor: color}}></div>
+            )}
+        </div>
+    )
+}
+
+export function Product({ product }) {
+    return (
+        <div style={{width: '100%'}}>
+            <div className={styles.productImage}>
+                <Image
+                    priority
+                    width={250}
+                    height={500}
+                    layout='intrinsic'
+                    src={product.IMAGE}
+                    alt='image'
+                    style={{width: '100%', objectFit: 'cover'}}
+                />
+            </div>
+            <Colors colors={product.COLORS}/>
+            <p className={styles.name}>{product.NAME}</p>
+            <p className={styles.price}>${product.PRICE}</p>
+        </div>
+    )
+}
+
 export function SeeMore() {
     return (
         <div style={{marginTop: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>

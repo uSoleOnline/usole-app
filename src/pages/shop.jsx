@@ -1,7 +1,7 @@
 import Layout from '../components/Layout'
 import styles from '../styles/Shop.module.css'
 import Image from 'next/image'
-import { Annoucement, Section, Header, SeeMore, Arrow, slide } from '../components/Utilities'
+import { Annoucement, Section, Header, Product, SeeMore, Arrow, slide } from '../components/Utilities'
 
 function Slideshow({ images }) {
     return (
@@ -25,37 +25,6 @@ function Slideshow({ images }) {
     )
 }
 
-function Colors({ colors }) {
-    return (
-        <div style={{display: 'inline-flex', marginTop: '5px'}}>
-            {colors.map((color) => 
-                <div className={styles.color} style={{backgroundColor: color}}></div>
-            )}
-        </div>
-    )
-}
-
-function Product({ product }) {
-    return (
-        <div style={{width: '100%'}}>
-            <div className={styles.productImage}>
-                <Image
-                    priority
-                    width={250}
-                    height={500}
-                    layout='intrinsic'
-                    src={product.IMAGE}
-                    alt='image'
-                    style={{width: '100%', objectFit: 'cover'}}
-                />
-            </div>
-            <Colors colors={product.COLORS}/>
-            <p className={styles.name}>{product.NAME}</p>
-            <p className={styles.price}>${product.PRICE}</p>
-        </div>
-    )
-}
-
 function Category({ title, id }) {
     const product = {
         NAME: 'Nike Air Jordan Soles',
@@ -66,7 +35,7 @@ function Category({ title, id }) {
     }
     return (
         <div>
-            <p className={styles.category}>{title}</p>
+            <p className={styles.category} style={{marginTop: '-25px'}}>{title}</p>
             <div className={styles.products} id={id}>
                 <Product product={product}/>
                 <Product product={product}/>
