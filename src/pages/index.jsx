@@ -7,13 +7,23 @@ import { useRouter } from 'next/router'
 function Home() {
     const router = useRouter()
     return (
-        <Layout title='Home'>
-            <Annoucement location='/shop'>
-                Happy New Years! Come and see our holiday sales events!
-            </Annoucement>
-            <Cover images={['/cover4.jpg', '/cover2.jpg', '/cover1.jpg']}/>
+        <Layout title=''>
+            <div className={styles.cover}>
+                <Image
+                    priority
+                    width={250}
+                    height={500}
+                    layout='intrinsic'
+                    src='/cover11.jpg'
+                    alt='image'
+                    style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)'}}
+                />
+                <p className={styles.caption}>Our mission</p>
+                <p className={styles.title}>Protect the earth</p>
+                <p className={styles.subtitle}>one eco-friendly shoe sole at a time.</p>
+            </div>
             <Section orient='center'>
-                <Header>Power in every step.</Header>
+                <Header style={{marginTop: '50px'}}>Power in every step.</Header>
                 <Description>
                     Reach greater heights this New Year's with a curated collection of new,<br/>customizeable shoe soles for all of your favorite models.
                 </Description>

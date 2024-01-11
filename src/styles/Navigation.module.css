@@ -26,12 +26,14 @@
 }
 .logo {
     background-color: transparent;
-    color: #FFFFFF;
     height: 48px;
     border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
     font-family: Lovelo;
     font-weight: 900;
-    font-size: 32px;
 }
 .section {
     width: 100%;

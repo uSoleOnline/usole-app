@@ -23,19 +23,19 @@ function Navbar() {
     return (
         <div className={styles.navbar}>
             <div className={styles.section} style={{justifyContent: 'flex-start'}}>
-                <NavButton text='Shop' location='/shop'/>
-                <NavButton text='Soles' location={soles}/>
-                <NavButton text='Kits' location={kits}/>
+                <NavButton text='About' location='/aboutus'/>
+                <NavButton text='Mission' location='/'/>
+                <NavButton text='Impact' location='/impact'/>
             </div>
             <div className={styles.section}>
-                <button className={styles.logo} onClick={() => router.push(('/'))}>
-                    USOLE
+                <button className={styles.logo} onClick={() => router.push(('/home'))}>
+                    <p style={{fontSize: '27px', marginTop: '30px', marginRight: '2px'}}>u</p><p style={{fontSize: '32px'}}>SOLE</p>
                 </button>
             </div>
             <div className={styles.section} style={{justifyContent: 'flex-end'}}>
-                <NavButton text='About Us' location='/aboutus'/>
-                <NavButton text='Sustainability' location='/sustainability'/>
-                <NavButton text='Log in' location='/login'/>
+                <NavButton text='Shop' location='/shop'/>
+                <NavButton text='Soles' location={soles}/>
+                <NavButton text='Kits' location={kits}/>
             </div>
         </div>
     )
