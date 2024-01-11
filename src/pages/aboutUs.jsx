@@ -39,15 +39,9 @@ function AboutUs() {
                     alt='image'
                     style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)'}}
                 />
-<<<<<<< HEAD:src/pages/aboutUs.jsx
                 <p className={styles.caption}>Our story</p>
                 <p className={styles.title}>Who<br/>we are</p>
                 <p className={styles.subtitle}>get know our team personally.</p>
-=======
-                <p className={styles.caption}>Our mission</p>
-                <p className={styles.title}>Protect the earth</p>
-                <p className={styles.subtitle}>one eco-friendly shoe sole at a time.</p>
->>>>>>> 1f2451ef307354de3076ec68fc640f3c9403ba76:src/pages/aboutus.jsx
             </div>
             <Section orient='center'>
                 <Header style={{marginTop: '50px'}}>The foundation</Header>
