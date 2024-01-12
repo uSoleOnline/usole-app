@@ -14,7 +14,7 @@ function Navbar() {
     const router = useRouter()
     const soles = {
         pathname: '/shop/[category]',
-        query: {category: 'soles'}
+        query: {category: 'outsoles'}
     }
     const kits = {
         pathname: '/shop/[category]',
@@ -23,7 +23,7 @@ function Navbar() {
     return (
         <div className={styles.navbar}>
             <div className={styles.section} style={{justifyContent: 'flex-start'}}>
-                <NavButton text='About' location='/aboutus'/>
+                <NavButton text='About' location='/aboutUs'/>
                 <NavButton text='Mission' location='/'/>
                 <NavButton text='Impact' location='/impact'/>
             </div>
@@ -34,7 +34,7 @@ function Navbar() {
             </div>
             <div className={styles.section} style={{justifyContent: 'flex-end'}}>
                 <NavButton text='Shop' location='/shop'/>
-                <NavButton text='Soles' location={soles}/>
+                <NavButton text='Outsoles' location={soles}/>
                 <NavButton text='Kits' location={kits}/>
             </div>
         </div>

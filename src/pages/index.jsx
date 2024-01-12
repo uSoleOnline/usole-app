@@ -1,7 +1,7 @@
 import styles from '@/styles/Home.module.css'
 import Layout from '../components/Layout'
 import Image from 'next/image'
-import { Cover, Annoucement, Section, Slider, Header, Description, Button } from '../components/Utilities'
+import { Section, Slider, Header, Heading, Description, Button } from '../components/Utilities'
 import { useRouter } from 'next/router'
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
                     width={250}
                     height={500}
                     layout='intrinsic'
-                    src='/cover11.jpg'
+                    src='/covers/cover002.jpg'
                     alt='image'
                     style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)'}}
                 />
@@ -23,6 +23,50 @@ function Home() {
                 <p className={styles.subtitle}>one eco-friendly shoe sole at a time.</p>
             </div>
             <Section orient='center'>
+                <Header style={{marginTop: '75px'}}>The product</Header>
+                <div className={styles.block}>
+                    <div className={styles.section}>
+                        <Heading>Shoe outsole</Heading>
+                        <Description>
+                            Purchase a variety of shoe soles designed for specific brand models, all 3D printed using flexible, biodegradable material, and guaranteed to improve performance.
+                        </Description>
+                    </div>
+                    <div className={styles.section}>
+                        <Heading>Assembly kit</Heading>
+                        <Description>
+                            Select affordable kits to assemble the soles to your worn-out shoes. Featuring a sanding tool, adhesive, and complementary outsole, it has all you need for success.
+                        </Description>
+                    </div>
+                </div>
+            </Section>
+            <Section orient='right' img='/product/sole005.gif' background='#000000'>
+                <Header style={{marginTop: '50px'}}>The outsole</Header>
+                <Description>
+                    uSole revolutionizes basketball footwear with replaceable outsoles crafted from bio-TPU, an eco-friendly and durable material. uSole employs a 95% ESTANE® ECO 12T90E 5% colophony split to enhance durability and improve performance.
+                </Description>
+                <Button style={{backgroundColor: '#FFFFFF', color: '#000000', marginBottom: '75px'}} onClick={() => router.push('/impact')}>
+                    Learn more
+                </Button>
+            </Section>
+            <Section orient='left' img='/product/kit001.jpg'>
+                <Header style={{marginTop: '50px'}}>The DIY kit</Header>
+                <Description>
+                    The uSole DIY kit allows anyone to revive their worn-out shoes for more use. The sanding apparatus is specifically designed to remove any unevenness in the remaining shoe sole, ensuring a seamless and secure bond using our specially formulated waterborne urethane adhesive.
+                </Description>
+                <Button style={{marginBottom: '75px'}} onClick={() => router.push('/product')}>
+                    Learn more
+                </Button>
+            </Section>
+            <Section orient='right' img='/product/sole006.gif' background='#000000'>
+                <Header>Protect<br/>our earth.</Header>
+                <Description>
+                    All outsoles are 3D printed with bio-TPU, a biodegradable and sustainable filament that ensures minimal carbon footprint and an eco-friendly manufacturing process. 
+                </Description>
+                <Button style={{backgroundColor: '#FFFFFF', color: '#000000', marginBottom: '75px'}} onClick={() => router.push('/impact')}>
+                    Learn more
+                </Button>
+            </Section>
+            <Section orient='center'>
                 <Header style={{marginTop: '50px'}}>Power in every step.</Header>
                 <Description>
                     Reach greater heights this New Year's with a curated collection of new,<br/>customizeable shoe soles for all of your favorite models.
@@ -30,31 +74,6 @@ function Home() {
                 <Button style={{marginBottom: '75px'}} onClick={() => router.push('/shop')}>
                     Shop Now
                 </Button>
-            </Section>                                                                
-            <Section orient='left' img='/cover8.jpg' background='#000000'>
-                <Header>Robust design.</Header>
-                <Description>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Description>
-            </Section>
-            <Section orient='right' img='/cover7.jpg'>
-                <Header>Protect<br/>our earth.</Header>
-                <Description>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Description>
-            </Section>
-            <Section orient='left' img='/cover5.jpg' background='#000000'>
-                <Header>Boost strength.</Header>
-                <Description>
-                    Designs are intended to enhance performace, increase comfort, and decrease your carbon footprint, and looking good doing it.
-                </Description>
-            </Section>
-            <Section orient='center'>
-                <Header style={{marginTop: '75px', marginBottom: '-15px'}}>All your favorite models.</Header>
-                <Description style={{marginBottom: '50px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-                </Description>
-                <Slider id='homePageSlider' scrollFactor={500} style={{marginBottom: '75px'}}/>
             </Section>
         </Layout>
     )

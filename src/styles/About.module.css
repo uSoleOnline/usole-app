@@ -9,7 +9,7 @@
     font-size: 32px;
     font-family: OpenSauce Black;
     position: relative;
-    top: -80vh;
+    top: -83vh;
     right: 5vw;
     text-align: right;
 }
@@ -24,7 +24,7 @@
     text-align: right;
     line-height: 245px;
     position: relative;
-    top: -105vh;
+    top: -110vh;
 }
 .subtitle {
     width: 100%;
@@ -37,7 +37,7 @@
     line-height: 164px;
     text-align: right;
     position: relative;
-    top: -125vh;
+    top: -130vh;
 }
 .block {
     padding: 4.5%;

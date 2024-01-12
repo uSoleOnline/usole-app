@@ -12,7 +12,7 @@ function Profile({ name, position, img, children }) {
                     priority
                     width={250}
                     height={500}
-                    layout='intrinsic'
+                    layout='/product/sole006.gif'
                     src={img}
                     alt={name}
                     style={{width: '100%', objectFit: 'cover'}}
@@ -35,7 +35,7 @@ function AboutUs() {
                     width={250}
                     height={500}
                     layout='intrinsic'
-                    src='/cover15.jpg'
+                    src='/cover2.jpg'
                     alt='image'
                     style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)'}}
                 />
@@ -69,7 +69,7 @@ function AboutUs() {
             <Section orient='center'>
                 <Header style={{marginTop: '75px'}}>Meet the team</Header>
                 <div className={styles.block} style={{columnGap: '7.5%'}}>
-                    <Profile name='Jacob Lee' position='Company Founder' img='/person.jpg'>
+                    <Profile name='Jacob Lee' position='Company Founder' img='/members/jacoblee.png'>
                         I am an avid basketball player and part of Poolesville High School's varsity team. My hobbies include playing the cello, listening to music, and hanging out with friends.
                     </Profile>
                     <Profile name='Yash Pandit' position='Company Founder' img='/members/yashpandit.png'>
@@ -83,43 +83,33 @@ function AboutUs() {
                     <Profile name='Lorraine Niaba' position='Website Developer' img='/members/lorraineniaba.png'>
                         I am a passionate web designer and programmer and enjoy using my skills to benefit others. My hobbies include reading, listening to philosophical debates, and developing websites.
                     </Profile>
-                    <Profile name='Flavia Martinez' position='Product Engineer' img='/person.jpg'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor.
+                    <Profile name='Flavia Martinez' position='Product Engineer' img='/members/flaviamartinez.png'>
+                        My passion lies in engineering, 3D printing, and programming. Beyond the classroom, I explore diverse interests, including spending time with friends, community service, and sports. 
                     </Profile>
                 </div>
             </Section>
             <Section orient='center' background='#000000'>
                 <Header style={{marginTop: '75px', marginBottom: '0px'}}>Our roles</Header>
             </Section>
-            <Section orient='left' img='/cover13.jpg' background='#000000'>
+            <Section orient='left' img='/members/candid002.jpg' background='#000000'>
                 <Description>
                     Jacob's progressive thinking, thoroughness, and multimedia design skills combined with Yash's experience in materials science and entrepreneurship competitions set the foundation. They added like-minded individuals to the team who shared the motivation and vision to create an innovative, environmentally-conscious product that we are proud to present. 
                 </Description>
             </Section>
-            <Section orient='right' img='/cover14.jpg'  background='#000000'>
+            <Section orient='right' img='/members/candid004.jpg'  background='#000000'>
                 <Description>
                     Shreyas Kasam, with his passion for finance, ensures our business is financially successful and sustainable. Lorraine Niaba, skilled in website development and research, ensures our online presence is top-notch. Flavia Martinez, adept in CAD Design, 3D printing, and physical prototyping, infuses innovative engineering design into our project.
                 </Description>
             </Section>
             <Section orient='center'>
-                <Header style={{marginTop: '50px', marginBottom: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
+                <Header style={{marginBottom: '-50px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
                     Together we present,&nbsp;<p style={{fontSize: '64px', marginTop: '70px'}}>u</p>Sole.
                     </Header>
                 <Description>
                     Our diverse team of aspiring entrepreneurs from different backgrounds blend creative thinking, business decision-making, and design innovation, to produce an exemplary product.
                 </Description>
-                <Button style={{padding: '20px', marginBottom: '50px'}}>Learn more about the product</Button>
+                <Button style={{padding: '20px', marginBottom: '50px'}}  onClick={() => router.push('/')}>View our product</Button>
             </Section>
-            {/* <Section orient='right' img='/product1.png' background='#000000'>
-                <Header style={{marginTop: '75px'}}>The product</Header>
-                <Description>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.<br/><br/>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Description>
-                <Button style={{backgroundColor: '#FFFFFF', color: '#000000', marginBottom: '75px'}} onClick={() => router.push('/sustainability')}>
-                    Learn more
-                </Button>
-            </Section> */}
         </Layout>
     )
 }

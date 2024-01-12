@@ -53,7 +53,7 @@ function Shop() {
                 Start the New Year with 60% on all kits in the holiday bundles!
             </Annoucement>
             <Section orient='center'>
-                <Slideshow images={['/cover4.jpg', '/cover2.jpg', '/cover1.jpg']}/>
+                <Slideshow images={['/product/shoe001.jpg', '/product/shoe002.jpg', '/product/shoe003.jpg']}/>
             </Section>
             <Section orient='center'>
                 <Header style={{margin: '0px'}}>
