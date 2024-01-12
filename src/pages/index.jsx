@@ -16,7 +16,7 @@ function Home() {
                     layout='intrinsic'
                     src='/covers/cover002.jpg'
                     alt='image'
-                    style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)'}}
+                    style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)', position: 'absolute'}}
                 />
                 <p className={styles.caption}>Our mission</p>
                 <p className={styles.title}>Protect the earth</p>

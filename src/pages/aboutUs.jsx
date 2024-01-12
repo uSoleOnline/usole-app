@@ -12,7 +12,6 @@ function Profile({ name, position, img, children }) {
                     priority
                     width={250}
                     height={500}
-                    layout='/product/sole006.gif'
                     src={img}
                     alt={name}
                     style={{width: '100%', objectFit: 'cover'}}
@@ -35,9 +34,9 @@ function AboutUs() {
                     width={250}
                     height={500}
                     layout='intrinsic'
-                    src='/cover2.jpg'
+                    src='/covers/cover006.jpg'
                     alt='image'
-                    style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)'}}
+                    style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)', position: 'absolute'}}
                 />
                 <p className={styles.caption}>Our story</p>
                 <p className={styles.title}>Who<br/>we are</p>
@@ -89,7 +88,7 @@ function AboutUs() {
                 </div>
             </Section>
             <Section orient='center' background='#000000'>
-                <Header style={{marginTop: '75px', marginBottom: '0px'}}>Our roles</Header>
+                <Header style={{marginTop: '75px', marginBottom: '-25px'}}>Our roles</Header>
             </Section>
             <Section orient='left' img='/members/candid002.jpg' background='#000000'>
                 <Description>
@@ -102,9 +101,9 @@ function AboutUs() {
                 </Description>
             </Section>
             <Section orient='center'>
-                <Header style={{marginBottom: '-50px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
-                    Together we present,&nbsp;<p style={{fontSize: '64px', marginTop: '70px'}}>u</p>Sole.
-                    </Header>
+                <Header style={{marginTop: '50px', marginBottom: '0px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center'}}>
+                    Together we present, uSole.
+                </Header>
                 <Description>
                     Our diverse team of aspiring entrepreneurs from different backgrounds blend creative thinking, business decision-making, and design innovation, to produce an exemplary product.
                 </Description>

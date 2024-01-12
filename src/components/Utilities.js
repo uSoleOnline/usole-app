@@ -147,11 +147,10 @@ export function Slider({ id, scrollFactor, style }) {
     return (
         <div className={styles.slider} id={id} style={style}>
             <Arrow side='left' onClick={() => slide(id, -scrollFactor)}/>
-            <SliderImage src='/shoe1.jpg'/>
-            <SliderImage src='/shoe2.jpg'/>
-            <SliderImage src='/shoe3.jpg'/>
-            <SliderImage src='/shoe4.jpg'/>
-            <SliderImage src='/shoe5.jpg'/>
+            <SliderImage src='/product/shoe001.jpg'/>
+            <SliderImage src='/product/shoe002.jpg'/>
+            <SliderImage src='/product/shoe003.jpg'/>
+            <SliderImage src='/product/shoe004.jpg'/>
             <Arrow side='right' onClick={() => slide(id, scrollFactor)}/>
         </div>
     )
