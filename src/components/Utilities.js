@@ -37,7 +37,7 @@ export function Annoucement({ location, children }) {
     )
 }
 
-export function Section({ orient='center', img='', background='#FFFFFF', children }) {
+export function Section({ orient='center', img='', background='#FFFFFF', newstyle, children }) {
     if (orient == 'center' && img == '') {
         return (
             <div className={styles.section} style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
@@ -86,7 +86,7 @@ export function Section({ orient='center', img='', background='#FFFFFF', childre
         )
     } else if (orient == 'right') {
         return (
-            <div className={styles.section}  style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
+            <div className={styles.section}  style={{...{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}, ...newstyle}}>
                 <div className={styles.sectionImage} style={{marginRight: '10%', marginLeft: '0px'}}>
                     <Image
                         priority

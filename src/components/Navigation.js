@@ -1,6 +1,7 @@
 import styles from '../styles/Navigation.module.css'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { Description } from './Utilities'
 
 function NavButton({ text, location }) {
     const router = useRouter()
@@ -37,8 +38,9 @@ function Navbar() {
                         layout='intrinsic'
                         src='/icons/logo.png'
                         alt='logo'
-                        style={{width: '28%', objectFit: 'cover'}}
-                    /></button>
+                        style={{maxHeight: '110%', objectFit: 'contain'}}
+                    />
+                </button>
             </div>
             <div className={styles.section} style={{justifyContent: 'flex-end'}}>
                 <NavButton text='Shop' location='/shop'/>
@@ -116,9 +118,7 @@ export function Sidebar({ category, deals }) {
 export function Footer() {
     return (
         <div className={styles.footer}>
-            <div>
-                
-            </div>
+            
         </div>
     )
 }

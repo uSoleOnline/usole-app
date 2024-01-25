@@ -26,6 +26,10 @@ function Profile({ name, position, img, children }) {
 
 function AboutUs() {
     const router = useRouter()
+    const newstyle = {
+        paddingTop: '0px',
+        marginTop: '-75px'
+    }
     return (
         <Layout title='About Us'>
             <div className={styles.cover}>
@@ -43,7 +47,7 @@ function AboutUs() {
                 <p className={styles.subtitle}>get know our team personally.</p>
             </div>
             <Section orient='center'>
-                <Header style={{marginTop: '50px'}}>The foundation</Header>
+                <Header style={{marginTop: '-50px'}}>Our foundation</Header>
                 <Description>
                     Our team, initially formed by Jacob Lee and Yash Pandit, arose from a shared concern for the environment and the duo's love for basketball. Their shared hobbie forced them to address the glaring problem of degrading outsoles. Realizing the environmental and financial implications of this problem, Jacob Lee took the role of designing the outsole and formulating the adhesive for uSole.
                 </Description>
@@ -88,14 +92,14 @@ function AboutUs() {
                 </div>
             </Section>
             <Section orient='center' background='#000000'>
-                <Header style={{marginTop: '75px', marginBottom: '-25px'}}>Our roles</Header>
+                <Header style={{marginTop: '50px', marginBottom: '-100px'}}>Our roles</Header>
             </Section>
             <Section orient='left' img='/members/candid002.jpg' background='#000000'>
                 <Description>
                     Jacob's progressive thinking, thoroughness, and multimedia design skills combined with Yash's experience in materials science and entrepreneurship competitions set the foundation. They added like-minded individuals to the team who shared the motivation and vision to create an innovative, environmentally-conscious product that we are proud to present. 
                 </Description>
             </Section>
-            <Section orient='right' img='/members/candid004.jpg'  background='#000000'>
+            <Section orient='right' img='/members/candid004.jpg' background='#000000' newstyle={newstyle}>
                 <Description>
                     Shreyas Kasam, with his passion for finance, ensures our business is financially successful and sustainable. Lorraine Niaba, skilled in website development and research, ensures our online presence is top-notch. Flavia Martinez, adept in CAD Design, 3D printing, and physical prototyping, infuses innovative engineering design into our project.
                 </Description>

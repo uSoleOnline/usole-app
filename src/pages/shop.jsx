@@ -25,10 +25,10 @@ function Slideshow({ images }) {
     )
 }
 
-function Category({ title, id }) {
+function Category({ title, id, image }) {
     const product = {
         NAME: 'Nike Air Jordan Soles',
-        IMAGE: '/shoe1.jpg',
+        IMAGE: image,
         PRICE: 9.99,
         COLORS: ['orange', 'blue', 'coral'],
         SIZES: [8, 9, 10, 12]
@@ -61,16 +61,16 @@ function Shop() {
                 </Header>
             </Section>
             <Section orient='center'>
-                <Category title="Holiday Bundles" id='holidayBundles'/>
+                <Category title="Holiday Bundles" id='holidayBundles' image='/product/shoe001.jpg'/>
             </Section>
             <Section orient='center'>
-                <Category title="New In Men's" id='newInMen'/>
+                <Category title="New In Men's" id='newInMen' image='/product/shoe002.jpg'/>
             </Section>
             <Section orient='center'>
-                <Category title="New In Women's" id='newInWomen'/>
+                <Category title="New In Women's" id='newInWomen'  image='/product/shoe003.jpg'/>
             </Section>
             <Section orient='center'>
-                <Category title="New In Teen's" id='newInTeen'/>
+                <Category title="New In Teen's" id='newInTeen'  image='/product/shoe004.jpg'/>
             </Section>
         </Layout>
     )

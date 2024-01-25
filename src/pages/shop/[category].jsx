@@ -8,21 +8,60 @@ export async function getServerSideProps(context) {
     const data = {
         CATEGORY: category,
         DEALS: ['75% off Clearance', '20% off Sports Soles'],
-        PRODUCTS: {
-            uniqueID1: {
-                NAME: 'Nike Air Jordan Soles',
-                IMAGE: '/shoe1.jpg',
+        PRODUCTS: [
+            {
+                NAME: 'Under Armour Curry 11 Soles',
+                IMAGE: '/product/shoe001.jpg',
                 PRICE: 9.99,
                 COLORS: ['orange', 'blue', 'coral'],
                 SIZES: [8, 9, 10, 12]
-            }, uniqueID2: {
-                NAME: 'Nike Air Jordan Soles',
-                IMAGE: '/shoe1.jpg',
+            }, {
+                NAME: 'Nike Sabrina 1 Soles',
+                IMAGE: '/product/shoe002.jpg',
                 PRICE: 9.99,
-                COLORS: ['orange', 'blue', 'coral'],
+                COLORS: ['green', 'lightgrey', 'purple', 'black'],
+                SIZES: [8, 9, 10, 12]
+            }, {
+                NAME: 'Adidas Trae Young 3 Soles',
+                IMAGE: '/product/shoe003.jpg',
+                PRICE: 9.99,
+                COLORS: ['cerulean', 'darkblue'],
+                SIZES: [8, 9, 10, 12]
+            }, {
+                NAME: 'Adidas Harden Volume 7 Soles',
+                IMAGE: '/product/shoe004.jpg',
+                PRICE: 9.99,
+                COLORS: ['lightblue', 'cyan', 'teal'],
                 SIZES: [8, 9, 10, 12]
             }
-        }
+        ],
+        KITS: [
+            {
+                NAME: 'Under Armour Curry 11 Soles',
+                IMAGE: '/product/shoe001.jpg',
+                PRICE: 9.99,
+                COLORS: ['green'],
+                SIZES: [8, 9, 10, 12]
+            }, {
+                NAME: 'Nike Sabrina 1 Soles',
+                IMAGE: '/product/shoe002.jpg',
+                PRICE: 9.99,
+                COLORS: ['green'],
+                SIZES: [8, 9, 10, 12]
+            }, {
+                NAME: 'Adidas Trae Young 3 Soles',
+                IMAGE: '/product/shoe003.jpg',
+                PRICE: 9.99,
+                COLORS: ['green'],
+                SIZES: [8, 9, 10, 12]
+            }, {
+                NAME: 'Adidas Harden Volume 7 Soles',
+                IMAGE: '/product/shoe004.jpg',
+                PRICE: 9.99,
+                COLORS: ['green'],
+                SIZES: [8, 9, 10, 12]
+            }
+        ]
     }
     return {
         props: data
@@ -30,25 +69,23 @@ export async function getServerSideProps(context) {
 }
 
 function Category(props) {
-    const product = {
-        NAME: 'Nike Air Jordan Soles',
-        IMAGE: '/shoe1.jpg',
-        PRICE: 9.99,
-        COLORS: ['orange', 'blue', 'coral'],
-        SIZES: [8, 9, 10, 12]
+    var images = props.PRODUCTS
+    console.log(props.PRODUCTS)
+    if (props.CATEGORY == 'Outsoles') {
+        images = props.KITS
     }
     return (
         <ShopSoles category={props.CATEGORY} deals={props.DEALS}>
             <p className={styles.category}>Shopping</p>
             <div className={styles.products} style={{marginBottom: '15%'}}>
-                <Product product={product}/>
-                <Product product={product}/>
-                <Product product={product}/>
-                <Product product={product}/>
-                <Product product={product}/>
-                <Product product={product}/>
-                <Product product={product}/>
-                <Product product={product}/>
+                <Product product={props.PRODUCTS[0]}/>
+                <Product product={props.PRODUCTS[1]}/>
+                <Product product={props.PRODUCTS[2]}/>
+                <Product product={props.PRODUCTS[3]}/>
+                <Product product={props.PRODUCTS[0]}/>
+                <Product product={props.PRODUCTS[1]}/>
+                <Product product={props.PRODUCTS[2]}/>
+                <Product product={props.PRODUCTS[3]}/>
             </div>
         </ShopSoles>
     )
