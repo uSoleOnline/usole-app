@@ -6,6 +6,10 @@ import { useRouter } from 'next/router'
 
 function Home() {
     const router = useRouter()
+    const newstyle = {
+        paddingTop: '0px',
+        marginTop: '-75px'
+    }
     return (
         <Layout title=''>
             <div className={styles.cover}>
@@ -23,7 +27,7 @@ function Home() {
                 <p className={styles.subtitle}>one eco-friendly shoe sole at a time.</p>
             </div>
             <Section orient='center'>
-                <Header style={{marginTop: '75px'}}>The product</Header>
+                <Header style={{marginTop: '-25px'}}>The product</Header>
                 <div className={styles.block}>
                     <div className={styles.section}>
                         <Heading>Shoe outsole</Heading>
@@ -48,7 +52,7 @@ function Home() {
                     Learn more
                 </Button>
             </Section>
-            <Section orient='left' img='/product/kit001.jpg'>
+            <Section orient='left' img='/product/kit002.jpg'>
                 <Header style={{marginTop: '50px'}}>The DIY kit</Header>
                 <Description>
                     The uSole DIY kit allows anyone to revive their worn-out shoes for more use. The sanding apparatus is specifically designed to remove any unevenness in the remaining shoe sole, ensuring a seamless and secure bond using our specially formulated waterborne urethane adhesive.
@@ -57,8 +61,25 @@ function Home() {
                     Learn more
                 </Button>
             </Section>
-            <Section orient='right' img='/product/sole006.gif' background='#000000'>
-                <Header>Protect<br/>our earth.</Header>
+            <Section background='#000000'>
+                <Header style={{marginTop: '50px', marginBottom: '-75px'}}>How to use in 5 easy steps</Header>
+            </Section>
+            <Section orient='left' img='/product/product001.jpg' background='#000000' >
+                <Description style={{textAlign: 'right'}}>
+                    1. Purchase our DIY kit and outsole.<br/>
+                    2. Using our sanding block, sand down the existing outsole until the surface is even.<br/>
+                    3. Evenly coat the bottom of the shoe in our specially formulated adhesive.<br/>
+                    4. Attach the outsole to the shoe and press to remove any air bubbles.<br/>
+                </Description>
+            </Section>
+            <Section orient='right' img='/product/product002.jpg' background='#000000' newstyle={newstyle}>
+                <Description style={{textAlign: 'left'}}>
+                    5. Wait three minutes for the adhesive to dry and repeat with the next shoe.<br/><br/>
+                    And voila! Now you can enjoy your basketball shoes for longer at a low cost. Our kits feature a manual to walk you through this process in detail.
+                </Description>
+            </Section>
+            <Section orient='right' img='/product/kit003.jpg'>
+                <Header style={{marginTop: '50px'}}>Protect<br/>our earth.</Header>
                 <Description>
                     All outsoles are 3D printed with bio-TPU, a biodegradable and sustainable filament that ensures minimal carbon footprint and an eco-friendly manufacturing process. 
                 </Description>
