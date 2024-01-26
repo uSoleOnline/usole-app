@@ -118,7 +118,6 @@ export function Sidebar({ category, deals }) {
 export function Footer() {
     return (
         <div className={styles.footer}>
-            
         </div>
     )
 }

@@ -37,28 +37,28 @@ export async function getServerSideProps(context) {
         ],
         KITS: [
             {
-                NAME: 'Under Armour Curry 11 Soles',
-                IMAGE: '/product/shoe001.jpg',
+                NAME: 'Full Starter Kit',
+                IMAGE: '/product/kit002.jpg',
                 PRICE: 9.99,
                 COLORS: ['green'],
                 SIZES: [8, 9, 10, 12]
             }, {
-                NAME: 'Nike Sabrina 1 Soles',
-                IMAGE: '/product/shoe002.jpg',
+                NAME: 'Starter Kit Plus',
+                IMAGE: '/product/kit003.jpg',
+                PRICE: 9.99,
+                COLORS: ['green', 'indigo'],
+                SIZES: [8, 9, 10, 12]
+            }, {
+                NAME: 'Full Starter Kit',
+                IMAGE: '/product/kit002.jpg',
                 PRICE: 9.99,
                 COLORS: ['green'],
                 SIZES: [8, 9, 10, 12]
             }, {
-                NAME: 'Adidas Trae Young 3 Soles',
-                IMAGE: '/product/shoe003.jpg',
+                NAME: 'Starter Kit Plus',
+                IMAGE: '/product/kit003.jpg',
                 PRICE: 9.99,
-                COLORS: ['green'],
-                SIZES: [8, 9, 10, 12]
-            }, {
-                NAME: 'Adidas Harden Volume 7 Soles',
-                IMAGE: '/product/shoe004.jpg',
-                PRICE: 9.99,
-                COLORS: ['green'],
+                COLORS: ['green', 'indigo'],
                 SIZES: [8, 9, 10, 12]
             }
         ]
@@ -71,21 +71,21 @@ export async function getServerSideProps(context) {
 function Category(props) {
     var images = props.PRODUCTS
     console.log(props.PRODUCTS)
-    if (props.CATEGORY == 'Outsoles') {
+    if (props.CATEGORY == 'Kits') {
         images = props.KITS
     }
     return (
         <ShopSoles category={props.CATEGORY} deals={props.DEALS}>
             <p className={styles.category}>Shopping</p>
             <div className={styles.products} style={{marginBottom: '15%'}}>
-                <Product product={props.PRODUCTS[0]}/>
-                <Product product={props.PRODUCTS[1]}/>
-                <Product product={props.PRODUCTS[2]}/>
-                <Product product={props.PRODUCTS[3]}/>
-                <Product product={props.PRODUCTS[0]}/>
-                <Product product={props.PRODUCTS[1]}/>
-                <Product product={props.PRODUCTS[2]}/>
-                <Product product={props.PRODUCTS[3]}/>
+                <Product product={images[0]}/>
+                <Product product={images[1]}/>
+                <Product product={images[2]}/>
+                <Product product={images[3]}/>
+                <Product product={images[0]}/>
+                <Product product={images[1]}/>
+                <Product product={images[2]}/>
+                <Product product={images[3]}/>
             </div>
         </ShopSoles>
     )
