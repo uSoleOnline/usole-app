@@ -73,12 +73,12 @@ function Home() {
                 </Description>
             </Section>
             <Section orient='right' img='/product/product002.jpg' background='#000000' newstyle={newstyle}>
-                <Description style={{textAlign: 'left'}}>
+                <Description style={{textAlign: 'right'}}>
                     5. Wait three minutes for the adhesive to dry and repeat with the next shoe.<br/><br/>
                     And voila! Now you can enjoy your basketball shoes for longer at a low cost. Our kits feature a manual to walk you through this process in detail.
                 </Description>
             </Section>
-            <Section orient='right' img='/product/kit003.jpg'>
+            <Section orient='right' img='/product/kit003.jpg' background='#000000'>
                 <Header style={{marginTop: '50px'}}>Protect<br/>our earth.</Header>
                 <Description>
                     All outsoles are 3D printed with bio-TPU, a biodegradable and sustainable filament that ensures minimal carbon footprint and an eco-friendly manufacturing process. 
