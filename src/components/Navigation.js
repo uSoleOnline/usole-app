@@ -118,7 +118,29 @@ export function Sidebar({ category, deals }) {
 export function Footer() {
     return (
         <div className={styles.footer}>
-            
+            <div>
+                <p>Information</p>
+                <p>About</p>
+                <p>Mission</p>
+                <p>Impact</p>
+            </div>
+            <div>
+                <p>Shopping</p>
+                <p>Shop</p>
+                <p>Outsoles</p>
+                <p>Kits</p>
+            </div>
+            <button className={styles.logo} onClick={() => router.push(('/home'))}>
+                <Image
+                    priority
+                    width={250}
+                    height={500}
+                    layout='intrinsic'
+                    src='/icons/logo.png'
+                    alt='logo'
+                    style={{objectFit: 'contain'}}
+                />
+            </button>
         </div>
     )
 }
