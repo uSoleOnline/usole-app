@@ -44,7 +44,7 @@ function AboutUs() {
                 />
                 <p className={styles.caption}>Our story</p>
                 <p className={styles.title}>Who<br/>we are</p>
-                <p className={styles.subtitle}>get know our team personally.</p>
+                <p className={styles.subtitle}>get to know our team personally.</p>
             </div>
             <Section orient='center'>
                 <Header style={{marginTop: '-50px'}}>Our foundation</Header>

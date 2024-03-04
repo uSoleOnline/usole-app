@@ -5,11 +5,11 @@
 }
 .caption {
     color: #FFFFFF;
-    font-size: 32px;
+    font-size: 200%;
     font-family: OpenSauce Black;
     position: relative;
     top: 200px;
-    right: 5vw;
+    right: 5%;
     text-align: right;
 }
 .title {
@@ -17,7 +17,7 @@
     padding-left: 20%;
     padding-right: 5%;
     color: #FFFFFF;
-    font-size: 186px;
+    font-size: 1162.5%;
     font-family: Lovelo;
     font-weight: 900;
     text-align: right;
@@ -30,7 +30,7 @@
     padding-left: 20%;
     padding-right: 5%;
     color: #FFFFFF;
-    font-size: 96px;
+    font-size: 600%;
     font-family: OpenSauce Bold;
     font-weight: 900;
     line-height: 164px;
@@ -62,18 +62,18 @@
     margin-top: 30px;
     margin-bottom: 15px;
     font-family: OpenSauce Black;
-    font-size: 28px;
+    font-size: 175%;
     text-align: center;
 }
 .position {
     margin: 0px;
     font-family: Lovelo;
-    font-size: 18px;
+    font-size: 112.5%;
     text-align: center;
 }
 .description {
     font-family: OpenSauce;
-    font-size: 16px;
+    font-size: 100%;
     line-height: 28px;
     text-align: center;
 }

@@ -22,7 +22,7 @@
     justify-content: center;
     font-family: OpenSauce;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 87.5%;
     text-decoration: underline;
     text-align: center;
 }
@@ -31,6 +31,7 @@
     }
 .section {
     width: 100%;
+    min-width: 100%;
     padding: 4%;
     padding-left: 8%;
     padding-right: 8%;
@@ -51,7 +52,7 @@
     padding-right: 50px;
     color: #FFFFFF;
     font-family: OpenSauce Bold;
-    font-size: 24px;
+    font-size: 150%;
     text-transform: capitalize;
     text-align: center;
     align-self: center;
@@ -62,12 +63,12 @@
     margin-bottom: 30px;
     font-family: Lovelo;
     font-weight: 900;
-    font-size: 72px;
+    font-size: 450%;
     text-align: center;
 }
 .description {
     font-family: OpenSauce;
-    font-size: 20px;
+    font-size: 125%;
     line-height: 48px;
     text-align: center;
 }
@@ -80,7 +81,7 @@
     border: none;
     color: #FFFFFF;
     font-family: OpenSauce;
-    font-size: 18px;
+    font-size: 112.5%;
     text-align: center;
     align-self: center;
 }
@@ -91,8 +92,8 @@
     overflow-x: auto;
 }
 .sliderImage {
-	min-width: 28vw;
-    width: 28vw;
+	min-width: 28%;
+    width: 28%;
 	border: 5px solid #FFFFFF;
 	display: flex;
 	justify-content: center;
@@ -164,7 +165,7 @@
     margin: 0px;
     margin-top: 5px;
     font-family: OpenSauce;
-    font-size: 18px;
+    font-size: 112.5%;
 }
     .name:hover {
         cursor: pointer;
@@ -174,12 +175,12 @@
     margin: 0px;
     margin-top: 5px;
     font-family: OpenSauce;
-        font-size: 16px;
+    font-size: 100%;
     }
 .seeMore {
     margin: 0px;
     margin-bottom: 10px;
     font-family: OpenSauce;
-    font-size: 18px;
+    font-size: 112.5%;
     text-align: center;
 }

@@ -5,33 +5,33 @@
 }
 .caption {
     color: #FFFFFF;
-    font-size: 32px;
+    font-size: 200%;
     font-family: OpenSauce Black;
     position: relative;
     top: 200px;
-    left: 6vw;
+    left: 6%;
 }
 .title {
     width: 80%;
     color: #FFFFFF;
-    font-size: 186px;
+    font-size: 1162.5%;
     font-family: Lovelo;
     font-weight: 900;
     text-align: left;
     line-height: 245px;
     position: relative;
     top: 0px;
-    left: 5vw;
+    left: 5%;
 }
 .subtitle {
     width: 80%;
     color: #FFFFFF;
-    font-size: 96px;
+    font-size: 600%;
     font-family: OpenSauce Bold;
     font-weight: 900;
     line-height: 164px;
     text-align: left;
     position: relative;
     top: -125px;
-    left: 5vw;
+    left: 5%;
 }
