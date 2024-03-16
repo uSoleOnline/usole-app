@@ -29,7 +29,7 @@ export function Menu() {
     }
     return (
         <div className={styles.menu} id='menu'>
-            <NavButton style={menuButton} text='About' location='/aboutUs'/>
+            <NavButton style={menuButton} text='About' location='/about'/>
             <NavButton style={menuButton} text='Mission' location='/mission'/>
             <NavButton style={menuButton} text='Impact' location='/impact'/>
             <NavButton style={menuButton} text='Shop' location='/shop'/>
