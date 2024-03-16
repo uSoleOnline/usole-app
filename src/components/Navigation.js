@@ -72,7 +72,7 @@ function Navbar() {
                         style={{objectFit: 'contain', position: 'absolute', left: '5%', cursor: 'pointer'}}
                     />
                 </button>
-                <button className={styles.logo} onClick={() => router.push(('/home'))}>
+                <button className={styles.logo} onClick={() => router.push(('/'))}>
                     <Image
                         priority
                         width={100}
@@ -89,12 +89,12 @@ function Navbar() {
         return (
             <div className={styles.navbar}>
                 <div className={styles.section} style={{justifyContent: 'flex-start'}}>
-                    <NavButton text='About' location='/aboutUs'/>
+                    <NavButton text='About' location='/about'/>
                     <NavButton text='Mission' location='/mission'/>
                     <NavButton text='Impact' location='/impact'/>
                 </div>
                 <div className={styles.section}>
-                    <button className={styles.logo} onClick={() => router.push(('/home'))}>
+                    <button className={styles.logo} onClick={() => router.push(('/'))}>
                         <Image
                             priority
                             width={250}
