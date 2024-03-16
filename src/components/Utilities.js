@@ -1,6 +1,7 @@
 import styles from '../styles/Utilities.module.css'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import useWindowSize from './useWindowSize'
 
 function CoverImage({ src }) {
     return (
@@ -15,6 +16,24 @@ function CoverImage({ src }) {
                 style={{width: '100%', objectFit: 'cover'}}
             />
         </div>
+    )
+}
+
+export function SectionImage({ src, mobileWidth, webWidth }) {
+    const {width} = useWindowSize()
+    var imageWidth = webWidth
+    if (width < 700) {
+        imageWidth = mobileWidth
+    }
+    return (
+        <Image
+            width={250}
+            height={500}
+            layout='intrinsic'
+            src={src}
+            alt='image'
+            style={{width: imageWidth, objectFit: 'cover'}}
+        />
     )
 }
 
@@ -35,75 +54,6 @@ export function Annoucement({ location, children }) {
             <p onClick={() => router.push(location)}>{children}</p>
         </div>
     )
-}
-
-export function Section({ orient='center', img='', background='#FFFFFF', newstyle, children }) {
-    if (orient == 'center' && img == '') {
-        return (
-            <div className={styles.section} style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
-                <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
-                    {children}
-                </div>
-            </div>
-        )
-    } else if (orient == 'center' && img != '') {
-        return (
-            <div className={styles.section} style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
-                <div className={styles.sectionImage} style={{width: '90%'}}>
-                    <Image
-                        priority
-                        width={250}
-                        height={500}
-                        layout='intrinsic'
-                        src={img}
-                        alt='image'
-                        style={{width: '100%', objectFit: 'cover'}}
-                    />
-                </div>
-                <div style={{display: 'flex', flexDirection: 'column'}}>
-                    {children}
-                </div>
-            </div>
-        )
-    } else if (orient == 'left') {
-        return (
-            <div className={styles.section} style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
-                <div style={{width: '45%', textAlign: 'center'}}>
-                    {children}
-                </div>
-                <div className={styles.sectionImage} style={{marginLeft: '10%', marginRight: '0px'}}>
-                    <Image
-                        priority
-                        width={250}
-                        height={500}
-                        layout='intrinsic'
-                        src={img}
-                        alt='image'
-                        style={{width: '100%', objectFit: 'cover'}}
-                    />
-                </div>
-            </div>
-        )
-    } else if (orient == 'right') {
-        return (
-            <div className={styles.section}  style={{...{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}, ...newstyle}}>
-                <div className={styles.sectionImage} style={{marginRight: '10%', marginLeft: '0px'}}>
-                    <Image
-                        priority
-                        width={250}
-                        height={500}
-                        layout='intrinsic'
-                        src={img}
-                        alt='image'
-                        style={{width: '100%', objectFit: 'cover'}}
-                    />
-                </div>
-                <div style={{width: '45%', textAlign: 'center'}}>
-                    {children}
-                </div>
-            </div>
-        )
-    }
 }
 
 function SliderImage({ src }) {
@@ -204,7 +154,9 @@ export function Description({ children, style }) {
 
 export function Header({ children, style }) {
     return (
-        <p className={styles.header} style={style}>{children}</p>
+        <div style={{display: 'flex', width: '100%', marginBottom: '7%', justifyContent: 'center'}}>
+            <p className={styles.header} style={style}>{children}</p>
+        </div>
     )
 }
 
@@ -218,8 +170,10 @@ export function Heading({ children, style }) {
 
 export function Button({ children, onClick, style }) {
     return (
-        <button className={styles.button} style={style} onClick={onClick}>
-            {children}
-        </button>
+        <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <button className={styles.button} style={style} onClick={onClick}>
+                {children}
+            </button>
+        </div>
     )
 }

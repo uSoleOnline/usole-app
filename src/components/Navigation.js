@@ -1,19 +1,18 @@
 import styles from '../styles/Navigation.module.css'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import { Description } from './Utilities'
+import useWindowSize from './useWindowSize'
 
-function NavButton({ text, location }) {
+function NavButton({ text, location, style={} }) {
     const router = useRouter()
     return (
-        <button className={styles.navButton} onClick={() => router.push((location))}>
-            {text}
+        <button className={styles.navButton} style={style} onClick={() => router.push((location))}>
+            <span className={styles.text}>{text}</span>
         </button>
     )
 }
 
-function Navbar() {
-    const router = useRouter()
+export function Menu() {
     const soles = {
         pathname: '/shop/[category]',
         query: {category: 'outsoles'}
@@ -22,33 +21,99 @@ function Navbar() {
         pathname: '/shop/[category]',
         query: {category: 'kits'}
     }
+    const menuButton = {
+        width: '100%',
+        height: '55px',
+        paddingLeft: '30px',
+        textAlign: 'left'
+    }
     return (
-        <div className={styles.navbar}>
-            <div className={styles.section} style={{justifyContent: 'flex-start'}}>
-                <NavButton text='About' location='/aboutUs'/>
-                <NavButton text='Mission' location='/'/>
-                <NavButton text='Impact' location='/impact'/>
-            </div>
-            <div className={styles.section}>
+        <div className={styles.menu} id='menu'>
+            <NavButton style={menuButton} text='About' location='/aboutUs'/>
+            <NavButton style={menuButton} text='Mission' location='/mission'/>
+            <NavButton style={menuButton} text='Impact' location='/impact'/>
+            <NavButton style={menuButton} text='Shop' location='/shop'/>
+            <NavButton style={menuButton} text='Outsoles' location={soles}/>
+            <NavButton style={menuButton} text='Kits' location={kits}/>
+        </div>
+    )
+}
+
+function openMenu() {
+    var menu = document.getElementById('menu')
+    if (menu.style.display == 'none') {
+        menu.style.display = 'block'
+    } else {
+        menu.style.display = 'none'
+    }
+}
+
+function Navbar() {
+    const router = useRouter()
+    const {width} = useWindowSize()
+    const soles = {
+        pathname: '/shop/[category]',
+        query: {category: 'outsoles'}
+    }
+    const kits = {
+        pathname: '/shop/[category]',
+        query: {category: 'kits'}
+    }
+    if (width < 700) {
+        return (
+            <div className={styles.navbar}>
+                <button className={styles.logo} onClick={() => openMenu()}>
+                    <Image
+                        width={30}
+                        height={30}
+                        layout='intrinsic'
+                        src='/icons/menu.svg'
+                        alt='menu'
+                        style={{objectFit: 'contain', position: 'absolute', left: '5%', cursor: 'pointer'}}
+                    />
+                </button>
                 <button className={styles.logo} onClick={() => router.push(('/home'))}>
                     <Image
                         priority
-                        width={250}
-                        height={500}
+                        width={100}
+                        height={50}
                         layout='intrinsic'
                         src='/icons/logo.png'
                         alt='logo'
-                        style={{maxHeight: '110%', objectFit: 'contain'}}
+                        style={{objectFit: 'contain'}}
                     />
                 </button>
             </div>
-            <div className={styles.section} style={{justifyContent: 'flex-end'}}>
-                <NavButton text='Shop' location='/shop'/>
-                <NavButton text='Outsoles' location={soles}/>
-                <NavButton text='Kits' location={kits}/>
+        )
+    } else {
+        return (
+            <div className={styles.navbar}>
+                <div className={styles.section} style={{justifyContent: 'flex-start'}}>
+                    <NavButton text='About' location='/aboutUs'/>
+                    <NavButton text='Mission' location='/mission'/>
+                    <NavButton text='Impact' location='/impact'/>
+                </div>
+                <div className={styles.section}>
+                    <button className={styles.logo} onClick={() => router.push(('/home'))}>
+                        <Image
+                            priority
+                            width={250}
+                            height={500}
+                            layout='intrinsic'
+                            src='/icons/logo.png'
+                            alt='logo'
+                            style={{maxHeight: '110%', objectFit: 'contain'}}
+                        />
+                    </button>
+                </div>
+                <div className={styles.section} style={{justifyContent: 'flex-end'}}>
+                    <NavButton text='Shop' location='/shop'/>
+                    <NavButton text='Outsoles' location={soles}/>
+                    <NavButton text='Kits' location={kits}/>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 function Divider() {
@@ -117,31 +182,7 @@ export function Sidebar({ category, deals }) {
 
 export function Footer() {
     return (
-        <div className={styles.footer}>
-            <div>
-                <p>Information</p>
-                <p>About</p>
-                <p>Mission</p>
-                <p>Impact</p>
-            </div>
-            <div>
-                <p>Shopping</p>
-                <p>Shop</p>
-                <p>Outsoles</p>
-                <p>Kits</p>
-            </div>
-            <button className={styles.logo} onClick={() => router.push(('/home'))}>
-                <Image
-                    priority
-                    width={250}
-                    height={500}
-                    layout='intrinsic'
-                    src='/icons/logo.png'
-                    alt='logo'
-                    style={{objectFit: 'contain'}}
-                />
-            </button>
-        </div>
+        <div>Footer</div>
     )
 }
 

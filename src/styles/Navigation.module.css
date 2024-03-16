@@ -9,10 +9,19 @@
     box-shadow: 0px 1px 10px #00000040;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: fixed;
     z-index: 1;
     top: 0;
+}
+.menu {
+    background-color: #000000;
+    display: none;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 9%; 
+    z-index: 100;
 }
 .navButton {
     background-color: transparent;
@@ -25,6 +34,12 @@
     font-weight: 900;
     font-size: 100%;
 }
+    .navButton:hover {
+        color: #00C455;
+    }
+    .text:hover {
+        border-bottom: 4.5px solid #00C455;
+    }
 .logo {
     background-color: transparent;
     height: 30px;
@@ -106,4 +121,6 @@
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    bottom: 0;
 }

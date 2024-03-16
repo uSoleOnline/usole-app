@@ -1,0 +1,122 @@
+.cover {
+    position: relative;
+    top: 24vh;
+    margin-bottom: 30vh;
+}
+.caption {
+    color: #FFFFFF;
+    margin: 0px;
+    padding-left: 5.75%;
+    padding-right: 5.75%;
+    font-size: 3vw;
+    font-family: OpenSauce Black;
+}
+.title {
+    color: #FFFFFF;
+    margin: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 13.5vw;
+    font-family: Lovelo;
+    font-weight: 900;
+    line-height: 18vw;
+}
+.subtitle {
+    color: #FFFFFF;
+    margin: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 7.25vw;
+    font-family: OpenSauce Bold;
+    font-weight: 900;
+    line-height: 12.5vw;
+}
+.block {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10%;
+    justify-content: space-evenly;
+}
+.blockSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section {
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 100%;
+    padding: 8%;
+    text-align: center;
+}
+.imageSection {
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 100%;
+    padding: 8%;
+    display: flex;
+    column-gap: 10%;
+    
+    align-items: center;
+}
+.profile {
+    min-width: 27%;
+    width: 27%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.name {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-family: OpenSauce Black;
+    font-size: 175%;
+    text-align: center;
+}
+.position {
+    margin: 0px;
+    font-family: Lovelo;
+    font-size: 112.5%;
+    text-align: center;
+}
+.description {
+    font-family: OpenSauce;
+    font-size: 100%;
+    line-height: 28px;
+    text-align: center;
+}
+@media (max-width: 700px) {
+    .caption {
+        font-size: 4vw;
+    }
+    .imageSection {
+        width: 100%;
+        padding: 14%;
+        flex-direction: column;
+        row-gap: 75px;
+    }
+    .image {
+        width: 100%;
+    }
+    .section {
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+    .block {
+        width: 100%;
+        flex-direction: column;
+    }
+    .blockSection {
+        margin-top: 16%;
+    }
+        .blockSection:first-of-type {
+            margin-top: 6%;
+        }
+    .profile {
+        width: 100%;
+    }
+}

@@ -1,7 +1,6 @@
 .cover {
     width: 100%;
 	height: 50vh;
-    margin-bottom: 4%;
     display: inline-flex;
     justify-content: space-between;
     flex-direction: row;
@@ -20,6 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000000;
     font-family: OpenSauce;
     font-weight: 500;
     font-size: 87.5%;
@@ -29,59 +29,41 @@
     .annoucement:hover {
         cursor: pointer;
     }
-.section {
-    width: 100%;
-    min-width: 100%;
-    padding: 4%;
-    padding-left: 8%;
-    padding-right: 8%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.sectionImage {
-    width: 40%;
-    margin: 50px;
-}
 .heading {
     background-color: #000000;
-    min-width: 325px;
-    padding: 15px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 3.5%;
     color: #FFFFFF;
     font-family: OpenSauce Bold;
-    font-size: 150%;
+    font-size: 1.75vw;
     text-transform: capitalize;
     text-align: center;
     align-self: center;
 }
 .header {
-    width: 100%;
-    margin: 0px;
-    margin-bottom: 30px;
+    width: fit-content;
+    margin: 0;
     font-family: Lovelo;
     font-weight: 900;
-    font-size: 450%;
+    font-size: 6vw;
     text-align: center;
+    border-bottom: 1vw solid #00C455;
 }
 .description {
     font-family: OpenSauce;
-    font-size: 125%;
-    line-height: 48px;
+    font-size: 1.45vw;
+    line-height: 3.5vw;
     text-align: center;
 }
 .button {
     background-color: #000000;
-    margin-top: 35px;
+    margin: 0px; 
     padding: 15px;
     padding-left: 25px;
     padding-right: 25px;
     border: none;
     color: #FFFFFF;
     font-family: OpenSauce;
-    font-size: 112.5%;
+    font-size: 1.3vw;
     text-align: center;
     align-self: center;
 }
@@ -92,8 +74,7 @@
     overflow-x: auto;
 }
 .sliderImage {
-	min-width: 28%;
-    width: 28%;
+	min-width: 350px;
 	border: 5px solid #FFFFFF;
 	display: flex;
 	justify-content: center;
@@ -183,4 +164,23 @@
     font-family: OpenSauce;
     font-size: 112.5%;
     text-align: center;
+}
+@media (max-width: 700px) {
+    .header {
+        font-size: 8.75vw;
+        border-bottom: 1.75vw solid #00C455;
+    }
+    .heading {
+        font-size: 3.5vw;
+    }
+    .description {
+        font-size: 3.25vw;
+        line-height: 7vw;
+    }
+    .button {
+        font-size: 2.75vw;
+    }
+    .slider {
+        width: 95%;
+    }
 }

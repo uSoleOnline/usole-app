@@ -49,29 +49,7 @@ function Category({ title, id, image }) {
 function Shop() {
     return (
         <Layout title='Shop'>
-            <Annoucement location='/shop'>
-                Start the New Year with 60% on all kits in the holiday bundles!
-            </Annoucement>
-            <Section orient='center'>
-                <Slideshow images={['/product/shoe001.jpg', '/product/shoe002.jpg', '/product/shoe003.jpg']}/>
-            </Section>
-            <Section orient='center'>
-                <Header style={{margin: '0px'}}>
-                    Put your best foot forward.
-                </Header>
-            </Section>
-            <Section orient='center'>
-                <Category title="Holiday Bundles" id='holidayBundles' image='/product/shoe001.jpg'/>
-            </Section>
-            <Section orient='center'>
-                <Category title="New In Men's" id='newInMen' image='/product/shoe002.jpg'/>
-            </Section>
-            <Section orient='center'>
-                <Category title="New In Women's" id='newInWomen'  image='/product/shoe003.jpg'/>
-            </Section>
-            <Section orient='center'>
-                <Category title="New In Teen's" id='newInTeen'  image='/product/shoe004.jpg'/>
-            </Section>
+            <div>Shop</div>
         </Layout>
     )
 }

@@ -1,116 +1,65 @@
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/General.module.css'
 import Layout from '../components/Layout'
-import Image from 'next/image'
-import { Section, Slider, Header, Heading, Description, Button } from '../components/Utilities'
+import { SectionImage, Cover, Annoucement, Slider, Header, Description, Button } from '../components/Utilities'
 import { useRouter } from 'next/router'
+import useWindowSize from '../components/useWindowSize'
 
 function Home() {
     const router = useRouter()
-    const newstyle = {
-        paddingTop: '0px',
-        marginTop: '-75px'
-    }
+    const {width} = useWindowSize()
     return (
-        <Layout title=''>
-            <div className={styles.cover}>
-                <Image
-                    priority
-                    width={250}
-                    height={500}
-                    layout='intrinsic'
-                    src='/covers/cover002.jpg'
-                    alt='image'
-                    style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)', position: 'absolute'}}
-                />
-                <p className={styles.caption}>Our mission</p>
-                <p className={styles.title}>Protect the earth</p>
-                <p className={styles.subtitle}>one eco-friendly shoe sole at a time.</p>
-            </div>
-            <Section orient='center'>
-                <Header style={{marginTop: '-25px'}}>The product</Header>
-                <div className={styles.block}>
-                    <div className={styles.section}>
-                        <Heading>Shoe outsole</Heading>
-                        <Description>
-                            Purchase a variety of shoe soles designed for specific brand models, all 3D printed using flexible, biodegradable material, and guaranteed to improve performance.
-                        </Description>
-                    </div>
-                    <div className={styles.section}>
-                        <Heading>Assembly kit</Heading>
-                        <Description>
-                            Select affordable kits to assemble the soles to your worn-out shoes. Featuring a sanding tool, adhesive, and complementary outsole, it has all you need for success.
-                        </Description>
-                    </div>
-                </div>
-            </Section>
-            <Section orient='right' img='/product/sole005.gif' background='#000000'>
-                <Header style={{marginTop: '50px'}}>The outsole</Header>
-                <Description>
-                    uSole revolutionizes basketball footwear with replaceable outsoles crafted from bio-TPU, an eco-friendly and durable material. uSole employs a 95% ESTANE® ECO 12T90E 5% colophony split to enhance durability and improve performance.
-                </Description>
-                <Button style={{backgroundColor: '#FFFFFF', color: '#000000', marginBottom: '75px'}} onClick={() => router.push('/impact')}>
-                    Learn more
-                </Button>
-            </Section>
-            <Section orient='left' img='/product/kit002.jpg'>
-                <Header style={{marginTop: '50px'}}>The DIY kit</Header>
-                <Description>
-                    The uSole DIY kit allows anyone to revive their worn-out shoes for more use. The sanding apparatus is specifically designed to remove any unevenness in the remaining shoe sole, ensuring a seamless and secure bond using our specially formulated waterborne urethane adhesive.
-                </Description>
-                <Button style={{marginBottom: '75px'}} onClick={() => router.push('/product')}>
-                    Learn more
-                </Button>
-            </Section>
-            <Section background='#000000'>
-                <Header style={{marginTop: '50px', marginBottom: '-75px'}}>How to use in 5 easy steps</Header>
-            </Section>
-            <Section orient='left' img='/product/product001.jpg' background='#000000' >
-                <Description style={{textAlign: 'right'}}>
-                    1. Purchase our DIY kit and outsole.<br/>
-                    2. Using our sanding block, sand down the existing outsole until the surface is even.<br/>
-                    3. Evenly coat the bottom of the shoe in our specially formulated adhesive.<br/>
-                    4. Attach the outsole to the shoe and press to remove any air bubbles.<br/>
-                </Description>
-            </Section>
-            <Section orient='right' img='/product/product002.jpg' background='#000000' newstyle={newstyle}>
-                <Description style={{textAlign: 'right'}}>
-                    5. Wait three minutes for the adhesive to dry and repeat with the next shoe.<br/><br/>
-                    And voila! Now you can enjoy your basketball shoes for longer at a low cost. Our kits feature a manual to walk you through this process in detail.
-                </Description>
-            </Section>
-            <Section orient='right' img='/product/kit003.jpg' background='#000000'>
-                <Header style={{marginTop: '50px'}}>Protect<br/>our earth.</Header>
-                <Description>
-                    All outsoles are 3D printed with bio-TPU, a biodegradable and sustainable filament that ensures minimal carbon footprint and an eco-friendly manufacturing process. 
-                </Description>
-                <Button style={{backgroundColor: '#FFFFFF', color: '#000000', marginBottom: '75px'}} onClick={() => router.push('/impact')}>
-                    Learn more
-                </Button>
-            </Section>
-            <Section orient='center'>
-                <Header style={{marginTop: '50px'}}>Power in every step.</Header>
+        <Layout title='Home' style={{backgroundColor: '#FFFFFF'}}>
+            <Annoucement location='/shop'>
+                Happy New Years! Come and see our holiday sales events!
+            </Annoucement>
+            <Cover images={['/product/sole003.png', '/product/sole005.gif', '/product/sole004.png']}/>
+            <div className={styles.section}>
+                <Header>Power {(width < 700) && <br/>} in every step.</Header>
                 <Description>
                     Reach greater heights this New Year's with a curated collection of new,<br/>customizeable shoe soles for all of your favorite models.
                 </Description>
-                <Button style={{marginBottom: '75px'}} onClick={() => router.push('/shop')}>
+                <Button onClick={() => router.push('/shop')}>
                     Shop Now
                 </Button>
-            </Section>
+            </div>
+            <div className={styles.imageSection} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
+                <SectionImage src='/product/sole006.gif' webWidth='90%' mobileWidth='100%'/>
+                <div style={{width: '100%'}}>
+                    <Header>Boosts<br/>strength</Header>
+                    <Description>
+                        Our designs increase ankle support and traction and provide cushioning for the foot, generally enhancing performance and comfort, all while guaranteeing success at any sport.
+                    </Description>
+                    <Button style={{backgroundColor: '#FFFFFF', color: '#000000'}} onClick={() => router.push('/mission')}>Learn more</Button>
+                </div>
+            </div>                                                         
+            <div className={styles.imageSection}>
+                <div style={{width: '100%'}}>
+                    <Header>Robust<br/>design</Header>
+                    <Description>
+                        The outsole design is backed by extensive research on the herringbone tread pattern, which enhances our design's flexibility and durability. With our product, all shoes improve from worn-out to wearable with our kit and outsole.
+                    </Description>
+                </div>
+                <SectionImage src='/product/sole001.png' webWidth='90%' mobileWidth='100%'/>
+            </div>
+            <div className={styles.imageSection} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
+                <SectionImage src='/product/sole005.gif' webWidth='90%' mobileWidth='100%'/>
+                <div style={{width: '100%'}}>
+                    <Header>Protect<br/>our earth</Header>
+                    <Description>
+                        All outsoles are 3D printed with bio-TPU, a biodegradable and sustainable filament that ensures minimal carbon footprint and an eco-friendly manufacturing process. 
+                    </Description>
+                    <Button style={{backgroundColor: '#FFFFFF', color: '#000000'}} onClick={() => router.push('/impact')}>Learn more</Button>
+                </div>
+            </div>
+            <div className={styles.section}>
+                <Header style={{marginBottom: '-3%'}}>All your {(width < 700) && <br/>} favorite models.</Header>
+                <Description>
+                    Unique outsoles crafted for every popular shoe model, across all your favorite brands.
+                </Description>
+                <Slider id='homePageSlider' scrollFactor={500} style={{marginBottom: '75px'}}/>
+            </div>
         </Layout>
     )
 }
-
-/*
-To do list:
-- decide website color scheme
-- create usole logo
-- landing page vs home shopping page
-- about us & sustainability page
-- category pages w dynamic loading (serversideprops/staticprops)
-- login, signup, and customize pages
-- create google & github acc
-- setup firebase storage, auth, and firestore
-- setup github repo and vercel production
-*/
 
 export default Home
