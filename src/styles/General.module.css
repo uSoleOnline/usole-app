@@ -61,7 +61,7 @@
     column-gap: 10%;
     align-items: center;
 }
-.missionImageSection {
+.singleImageSection {
     background-color: #FFFFFF;
     color: #000000;
     width: 100%;
@@ -107,7 +107,7 @@
         flex-direction: column;
         row-gap: 50px;
     }
-    .missionImageSection {
+    .singleImageSection {
         width: 100%;
         padding: 14%;
         flex-direction: column;

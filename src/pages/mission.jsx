@@ -44,7 +44,7 @@ function Mission() {
                     </div>
                 </div>
             </div>
-            <div className={styles.missionImageSection} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
+            <div className={styles.singleImageSection} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
                 <SectionImage src='/product/sole005.gif' webWidth='90%' mobileWidth='100%'/>
                 <div style={{width: '100%'}}>
                     <Header>The outsole</Header>
@@ -56,7 +56,7 @@ function Mission() {
                     </Button>
                 </div>
             </div>
-            <div className={styles.missionImageSection}>
+            <div className={styles.singleImageSection}>
                 <div style={{width: '100%'}}>
                     <Header>The DIY kit</Header>
                     <Description>
@@ -77,7 +77,7 @@ function Mission() {
                     Learn more
                 </Button>
             </div>
-            <div className={styles.missionImageSection}>
+            <div className={styles.singleImageSection}>
                 <div style={{width: '100%'}}>
                     <Header>Protect<br/>our earth.</Header>
                     <Description>
