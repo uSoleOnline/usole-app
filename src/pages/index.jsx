@@ -24,7 +24,7 @@ function Home() {
             </div>
             <div className={styles.singleImageSection} style={{paddingTop: '0%', backgroundColor: '#000000', color: '#FFFFFF'}}>
                 <SectionImage src='/product/sole006.gif' webWidth='50%' mobileWidth='100%'/>
-                <div style={{width: '100%', marginTop: '-20%'}}>
+                <div style={{width: '100%', marginTop: '-24%'}}>
                     <Header>Boosts<br/>strength</Header>
                     <Description>
                         Our designs increase ankle support and traction and provide cushioning for the foot, generally enhancing performance and comfort, all while guaranteeing success at any sport.
@@ -33,7 +33,7 @@ function Home() {
                 </div>
             </div>                                                         
             <div className={styles.singleImageSection}>
-                <div style={{width: '100%'}}>
+                <div style={{width: '100%', marginBottom: '-8%'}}>
                     <Header>Robust<br/>design</Header>
                     <Description>
                         The outsole design is backed by extensive research on the herringbone tread pattern, which enhances our design's flexibility and durability. With our product, all shoes improve from worn-out to wearable with our kit and outsole.
@@ -52,7 +52,7 @@ function Home() {
                 </div>
             </div>
             <div className={styles.section}>
-                <Header style={{marginBottom: '-3%'}}>All your favorite {(width < 700) && <br/>} models.</Header>
+                <Header style={{marginBottom: '-3%'}}>All your {(width < 700) && <br/>} favorite models.</Header>
                 <Description>
                     Unique outsoles crafted for every popular shoe model, across all your favorite brands.
                 </Description>
