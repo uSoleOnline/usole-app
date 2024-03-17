@@ -59,7 +59,15 @@
     padding: 8%;
     display: flex;
     column-gap: 10%;
-    
+    align-items: center;
+}
+.missionImageSection {
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 100%;
+    padding: 8%;
+    display: flex;
+    column-gap: 10%;
     align-items: center;
 }
 .profile {
@@ -94,6 +102,12 @@
         font-size: 4vw;
     }
     .imageSection {
+        width: 100%;
+        padding: 25px;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .missionImageSection {
         width: 100%;
         padding: 14%;
         flex-direction: column;

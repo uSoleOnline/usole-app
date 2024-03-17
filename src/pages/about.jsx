@@ -3,6 +3,7 @@ import styles from '../styles/General.module.css'
 import Image from 'next/image'
 import { SectionImage, Header, Heading, Description, Button } from '../components/Utilities'
 import { useRouter } from 'next/router'
+import useWindowSize from '../components/useWindowSize'
 
 function Profile({ name, position, img, children }) {
     return (
@@ -24,6 +25,7 @@ function Profile({ name, position, img, children }) {
 
 function About() {
     const router = useRouter()
+    const {width} = useWindowSize()
     return (
         <Layout title='About'>
             <div style={{position: 'absolute', width: '100%', height: '100%'}}>
@@ -103,7 +105,7 @@ function About() {
                 </div>
             </div>
             <div className={styles.section}>
-                <Header style={{fontSize: '5.725vw'}}>Together, we present <span style={{color: '#00C455'}}>uSole.</span></Header>
+                <Header style={{fontSize: '5.725vw'}}>Together, {(width < 700) && <br/>} we present <span style={{color: '#00C455'}}>uSole.</span></Header>
                 <Description style={{marginTop: '-5%'}}>
                     Our diverse team of aspiring entrepreneurs from different backgrounds blend creative thinking, business decision-making, and design innovation, to produce an exemplary product.
                 </Description>

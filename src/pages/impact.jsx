@@ -41,13 +41,13 @@ function Impact() {
             </div>
             <div className={styles.section} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
                 <Header>Aiding {(width < 700) && <br/>} communities</Header>
-                <div className={styles.imageSection} style={{paddingTop: '0%', paddingBottom: '0%', backgroundColor: '#000000', color: '#FFFFFF'}}>
+                <div className={styles.imageSection} style={{paddingTop: '0%', backgroundColor: '#000000', color: '#FFFFFF'}}>
                     <Description>
                         Our product targets low-income consumers, as our product aims to immensely decrease the cost of pursuing sports. Research demonstrates that middle-class families experience greater pressure compared to upper-class families when it comes to their children playing sports, often forcing them to discontinue their passion.
                     </Description>
                     <SectionImage src='/covers/cover008.jpg' webWidth='320%' mobileWidth='100%'/>
                 </div>
-                <div className={styles.imageSection} style={{paddingTop: '4%', paddingBottom: '0%', backgroundColor: '#000000', color: '#FFFFFF'}}>
+                <div className={styles.imageSection} style={{paddingBottom: '0%', backgroundColor: '#000000', color: '#FFFFFF'}}>
                     <Description>
                         Replacing soles instead of entire shoes translates to potential annual savings of around $335 for each customer, based on average basketball shoe costs and uSole's estimated $32.88 kit price. By saving customers money, we make basketball shoes more accessible to a wider demographic, especially those with lower incomes.
                     </Description>
