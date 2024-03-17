@@ -1,6 +1,8 @@
 import styles from '../../styles/Shop.module.css'
 import { ShopSoles } from '../../components/Layout'
-import { Product } from '../../components/Utilities'
+import { Header, Product } from '../../components/Utilities'
+import { InlineMenu } from '../../components/Navigation'
+import useWindowSize from '../../components/useWindowSize'
 
 export async function getServerSideProps(context) {
     var category = context.params.category
@@ -69,23 +71,22 @@ export async function getServerSideProps(context) {
 }
 
 function Category(props) {
+    const {width} = useWindowSize()
     var images = props.PRODUCTS
-    console.log(props.PRODUCTS)
     if (props.CATEGORY == 'Kits') {
         images = props.KITS
     }
     return (
         <ShopSoles category={props.CATEGORY} deals={props.DEALS}>
-            <p className={styles.category}>Shopping</p>
-            <div className={styles.products} style={{marginBottom: '15%'}}>
-                <Product product={images[0]}/>
-                <Product product={images[1]}/>
-                <Product product={images[2]}/>
-                <Product product={images[3]}/>
-                <Product product={images[0]}/>
-                <Product product={images[1]}/>
-                <Product product={images[2]}/>
-                <Product product={images[3]}/>
+            <Header style={{marginBottom: '-3%', justifyContent: 'flex-start'}}>Shopping</Header>
+            {(width < 700) && <InlineMenu category={props.CATEGORY} deals={props.DEALS}/>}
+            <div className={styles.grid}>
+                {images.map((image) => 
+                    <Product product={image}/>
+                )}
+                {images.map((image) => 
+                    <Product product={image}/>
+                )}
             </div>
         </ShopSoles>
     )

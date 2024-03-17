@@ -52,11 +52,11 @@ function Home() {
                 </div>
             </div>
             <div className={styles.section}>
-                <Header style={{marginBottom: '-3%'}}>All your {(width < 700) && <br/>} favorite models.</Header>
+                <Header style={{marginBottom: '-3%'}}>All your favorite {(width < 700) && <br/>} models.</Header>
                 <Description>
                     Unique outsoles crafted for every popular shoe model, across all your favorite brands.
                 </Description>
-                <Slider id='homePageSlider' scrollFactor={500} style={{marginBottom: '75px'}}/>
+                <Slider id='homePageSlider' scrollFactor={500}/>
             </div>
         </Layout>
     )

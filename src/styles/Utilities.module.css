@@ -124,39 +124,38 @@
     }
 .productImage {
     width: 100%;
+    object-fit: cover;
 }
     .productImage:hover {
         cursor: pointer;
-        filter: brightness(80%);
+        filter: brightness(90%);
     }
 .color {
-    height: 25px;
-    width: 25px;
+    width: 3vw;
+    aspect-ratio: 1;
     border-radius: 50%;
-    margin-right: 10px;
+    margin: 4%;
 }
-    .color:last-of-type {
-        margin-left: 0px;
-    }
     .color:hover {
         cursor: pointer;
-        outline: 2px solid #000000;
+        border: 1px solid #FFFFFF;
+        outline: 2px solid #00C455;
     }
 .name {
     margin: 0px;
     margin-top: 5px;
     font-family: OpenSauce;
-    font-size: 112.5%;
+    font-size: 1.5vw;
 }
     .name:hover {
         cursor: pointer;
-        text-decoration: underline;
+        color: #00C455;
     }
 .price {
     margin: 0px;
     margin-top: 5px;
     font-family: OpenSauce;
-    font-size: 100%;
+    font-size: 1.125vw;
     }
 .seeMore {
     margin: 0px;
@@ -182,5 +181,14 @@
     }
     .slider {
         width: 95%;
+    }
+    .color {
+        width: 5vw;
+    }
+    .name {
+        font-size: 3vw;
+    }
+    .price {
+        font-size: 2.25vw;
     }
 }

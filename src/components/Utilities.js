@@ -94,14 +94,15 @@ export function Arrow({ side, onClick }) {
 }
 
 export function Slider({ id, scrollFactor, style }) {
+    const {width} = useWindowSize()
     return (
         <div className={styles.slider} id={id} style={style}>
-            <Arrow side='left' onClick={() => slide(id, -scrollFactor)}/>
+            {(width > 700) && <Arrow side='left' onClick={() => slide(id, -scrollFactor)}/>}
             <SliderImage src='/product/shoe001.jpg'/>
             <SliderImage src='/product/shoe002.jpg'/>
             <SliderImage src='/product/shoe003.jpg'/>
             <SliderImage src='/product/shoe004.jpg'/>
-            <Arrow side='right' onClick={() => slide(id, scrollFactor)}/>
+            {(width > 700) && <Arrow side='right' onClick={() => slide(id, scrollFactor)}/>}
         </div>
     )
 }
@@ -118,18 +119,16 @@ function Colors({ colors }) {
 
 export function Product({ product }) {
     return (
-        <div style={{width: '100%'}}>
-            <div className={styles.productImage}>
-                <Image
-                    priority
-                    width={250}
-                    height={500}
-                    layout='intrinsic'
-                    src={product.IMAGE}
-                    alt='image'
-                    style={{width: '100%', objectFit: 'cover'}}
-                />
-            </div>
+        <div style={{width: '100%', textAlign:'left'}}>
+            <Image
+                priority
+                width={250}
+                height={500}
+                layout='intrinsic'
+                src={product.IMAGE}
+                alt='image'
+                className={styles.productImage}
+            />
             <Colors colors={product.COLORS}/>
             <p className={styles.name}>{product.NAME}</p>
             <p className={styles.price}>${product.PRICE}</p>
@@ -137,7 +136,7 @@ export function Product({ product }) {
     )
 }
 
-export function SeeMore() {
+export function SeeMore({ onClick }) {
     return (
         <div style={{marginTop: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
             <p className={styles.seeMore}>See more</p>

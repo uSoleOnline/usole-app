@@ -1,8 +1,7 @@
 .navbar {
     background-color: #000000;
     width: 100%;
-    min-height: 9%;
-    max-height: 68px;
+    height: 56px;
     padding: 10px;
     padding-left: 25px;
     padding-right: 25px;
@@ -20,9 +19,18 @@
     width: 250px;
     height: 100%;
     position: fixed;
-    top: 9%; 
+    top: 56px;
     z-index: 100;
 }
+.menuIcon {
+    object-fit: contain;
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+}
+    .menuIcon:hover, .icon:hover {
+        filter: invert(47%) sepia(90%) saturate(1370%) hue-rotate(109deg) brightness(97%) contrast(101%);
+    }
 .navButton {
     background-color: transparent;
     color: #FFFFFF;
@@ -33,11 +41,11 @@
     font-family: OpenSauce Bold;
     font-weight: 900;
     font-size: 100%;
+    cursor: auto;
 }
-    .navButton:hover {
-        color: #00C455;
-    }
     .text:hover {
+        cursor: pointer;
+        color: #00C455;
         border-bottom: 4.5px solid #00C455;
     }
 .logo {
@@ -48,38 +56,55 @@
     justify-content: center;
     align-items: center;
 }
+.logoImage {
+    object-fit: contain;
+    max-height: 110%;
+}
+    .logoImage:hover {
+        filter: brightness(75%);
+    }
 .section {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.inlineMenu {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    column-gap: 10%;
+}
 .sidebar {
+    min-width: 200px;
     width: 25%;
-    padding: 3.5%;
-    border-right: 2px solid #CFCFCF;
+    padding: 3%;
+    border-right: 1px solid #CFCFCF;
 }
 .category {
     width: 100%;
     margin: 0px;
-    margin-bottom: 22px;
-    font-size: 225%;
+    font-size: 3.25vw;
     font-family: OpenSauce Bold;
     text-transform: capitalize;
 }
 .filter {
-    margin-bottom: 22px;
-    font-size: 100%;
+    margin-bottom: 1.75vw;
+    font-size: 1.25vw;
     font-family: OpenSauce;
     text-transform: capitalize;
 }
+    .filter:hover {
+        cursor: pointer;
+        color: #00C455;
+    }
 .check {
     margin-bottom: 22px;
     font-size: 87.5%;
     font-family: OpenSauce;
     text-transform: capitalize;
 }
-    .filter:hover, .check:hover {
+    .check:hover {
         cursor: pointer;
         text-decoration: underline;
     }
@@ -112,8 +137,8 @@
         cursor: pointer;
     }
 .divider {
-    margin-top: 5px;
-    border: 1px solid #CFCFCF;
+    margin-bottom: 1.25vw;
+    border: 0.5px solid #CFCFCF;
 }
 .footer {
     background-color: #000000;

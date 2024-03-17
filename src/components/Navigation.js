@@ -1,5 +1,5 @@
 import styles from '../styles/Navigation.module.css'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import Image from 'next/image'
 import useWindowSize from './useWindowSize'
 
@@ -12,7 +12,7 @@ function NavButton({ text, location, style={} }) {
     )
 }
 
-export function Menu() {
+export function Menu({ style }) {
     const soles = {
         pathname: '/shop/[category]',
         query: {category: 'outsoles'}
@@ -28,7 +28,7 @@ export function Menu() {
         textAlign: 'left'
     }
     return (
-        <div className={styles.menu} id='menu'>
+        <div className={styles.menu} style={style} id='menu'>
             <NavButton style={menuButton} text='About' location='/about'/>
             <NavButton style={menuButton} text='Mission' location='/mission'/>
             <NavButton style={menuButton} text='Impact' location='/impact'/>
@@ -50,6 +50,7 @@ function openMenu() {
 
 function Navbar() {
     const router = useRouter()
+    const pathname = usePathname()
     const {width} = useWindowSize()
     const soles = {
         pathname: '/shop/[category]',
@@ -59,66 +60,171 @@ function Navbar() {
         pathname: '/shop/[category]',
         query: {category: 'kits'}
     }
-    if (width < 700) {
-        return (
-            <div className={styles.navbar}>
-                <button className={styles.logo} onClick={() => openMenu()}>
-                    <Image
-                        width={30}
-                        height={30}
-                        layout='intrinsic'
-                        src='/icons/menu.svg'
-                        alt='menu'
-                        style={{objectFit: 'contain', position: 'absolute', left: '5%', cursor: 'pointer'}}
-                    />
-                </button>
-                <button className={styles.logo} onClick={() => router.push(('/'))}>
-                    <Image
-                        priority
-                        width={100}
-                        height={50}
-                        layout='intrinsic'
-                        src='/icons/logo.png'
-                        alt='logo'
-                        style={{objectFit: 'contain'}}
-                    />
-                </button>
-            </div>
-        )
-    } else {
-        return (
-            <div className={styles.navbar}>
-                <div className={styles.section} style={{justifyContent: 'flex-start'}}>
-                    <NavButton text='About' location='/about'/>
-                    <NavButton text='Mission' location='/mission'/>
-                    <NavButton text='Impact' location='/impact'/>
-                </div>
-                <div className={styles.section}>
+    if (pathname.includes('/shop/')) {
+        if (width < 700) {
+            return (
+                <div className={styles.navbar} style={{justifyContent: 'space-between'}}>
                     <button className={styles.logo} onClick={() => router.push(('/'))}>
                         <Image
                             priority
-                            width={250}
-                            height={500}
+                            width={100}
+                            height={50}
                             layout='intrinsic'
                             src='/icons/logo.png'
                             alt='logo'
-                            style={{maxHeight: '110%', objectFit: 'contain'}}
+                            className={styles.logoImage}
+                        />
+                    </button>
+                    <div style={{display: 'flex', justifyContent: 'center', columnGap: '10px'}}>
+                        <button className={styles.logo}>
+                            <Image
+                                width={18}
+                                height={18}
+                                layout='intrinsic'
+                                src='/icons/profile.svg'
+                                alt='profile'
+                                className={styles.icon}
+                            />
+                        </button>
+                        <button className={styles.logo}>
+                            <Image
+                                width={24}
+                                height={24}
+                                layout='intrinsic'
+                                src='/icons/cart.svg'
+                                alt='cart'
+                                className={styles.icon}
+                            />
+                        </button>
+                        <button className={styles.logo} onClick={() => openMenu()}>
+                            <Image
+                                width={25}
+                                height={25}
+                                layout='intrinsic'
+                                src='/icons/menu.svg'
+                                alt='menu'
+                                className={styles.icon}
+                            />
+                        </button>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className={styles.navbar} style={{justifyContent: 'space-between'}}>
+                    <button className={styles.logo} onClick={() => router.push(('/'))}>
+                        <Image
+                            priority
+                            width={100}
+                            height={50}
+                            layout='intrinsic'
+                            src='/icons/logo.png'
+                            alt='logo'
+                            className={styles.logoImage}
+                        />
+                    </button>
+                    <div style={{display: 'flex', justifyContent: 'center', columnGap: '10px'}}>
+                        <NavButton text='Men' location={{pathname: '/shop/[category]', query: {category: "Men's"}}}/>
+                        <NavButton text='Women' location={{pathname: '/shop/[category]', query: {category: "Women's"}}}/>
+                        <NavButton text='Teen' location={{pathname: '/shop/[category]', query: {category: "Teen's"}}}/>
+                    </div>
+                    <div style={{display: 'flex', justifyContent: 'center', columnGap: '10px'}}>
+                        <button className={styles.logo}>
+                            <Image
+                                width={18}
+                                height={18}
+                                layout='intrinsic'
+                                src='/icons/profile.svg'
+                                alt='profile'
+                                className={styles.icon}
+                            />
+                        </button>
+                        <button className={styles.logo}>
+                            <Image
+                                width={24}
+                                height={24}
+                                layout='intrinsic'
+                                src='/icons/cart.svg'
+                                alt='cart'
+                                className={styles.icon}
+                            />
+                        </button>
+                        <button className={styles.logo} onClick={() => openMenu()}>
+                            <Image
+                                width={25}
+                                height={25}
+                                layout='intrinsic'
+                                src='/icons/menu.svg'
+                                alt='menu'
+                                className={styles.icon}
+                            />
+                        </button>
+                    </div>
+                </div>
+            )
+        }
+    } else {
+        if (width < 700) {
+            return (
+                <div className={styles.navbar}>
+                    <button className={styles.logo} onClick={() => openMenu()}>
+                        <Image
+                            width={25}
+                            height={25}
+                            layout='intrinsic'
+                            src='/icons/menu.svg'
+                            alt='menu'
+                            className={styles.menuIcon}
+                        />
+                    </button>
+                    <button className={styles.logo} onClick={() => router.push(('/'))}>
+                        <Image
+                            priority
+                            width={100}
+                            height={50}
+                            layout='intrinsic'
+                            src='/icons/logo.png'
+                            alt='logo'
+                            className={styles.logoImage}
                         />
                     </button>
                 </div>
-                <div className={styles.section} style={{justifyContent: 'flex-end'}}>
-                    <NavButton text='Shop' location='/shop'/>
-                    <NavButton text='Outsoles' location={soles}/>
-                    <NavButton text='Kits' location={kits}/>
+            )
+        } else {
+            return (
+                <div className={styles.navbar}>
+                    <div className={styles.section} style={{justifyContent: 'flex-start'}}>
+                        <NavButton text='About' location='/about'/>
+                        <NavButton text='Mission' location='/mission'/>
+                        <NavButton text='Impact' location='/impact'/>
+                    </div>
+                    <div className={styles.section}>
+                        <button className={styles.logo} onClick={() => router.push(('/'))}>
+                            <Image
+                                priority
+                                width={250}
+                                height={500}
+                                layout='intrinsic'
+                                src='/icons/logo.png'
+                                alt='logo'
+                                className={styles.logoImage}
+                            />
+                        </button>
+                    </div>
+                    <div className={styles.section} style={{justifyContent: 'flex-end'}}>
+                        <NavButton text='Shop' location='/shop'/>
+                        <NavButton text='Outsoles' location={soles}/>
+                        <NavButton text='Kits' location={kits}/>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 
-function Divider() {
+function Divider({ style={} }) {
     return (
-        <hr className={styles.divider}/>
+        <hr className={styles.divider} style={style}/>
     )
 }
 
@@ -176,6 +282,24 @@ export function Sidebar({ category, deals }) {
             <Divider/>
             <Dropdown id='brand' options={['Nike', 'Adidas', 'Puma', 'FILA', 'Reebok', 'Converse', 'Vans']}>Brand</Dropdown>
             <Divider/>
+        </div>
+    )
+}
+
+export function InlineMenu({ category, deals }) {
+    const types = ['Basketball', 'Soccer', 'Tennis', 'Track & Field', 'Hiking']
+    return (
+        <div style={{}}>
+            <p className={styles.category} style={{fontSize: '5vw'}}>{category}</p>
+            <div className={styles.inlineMenu}>
+                {deals.map((deal) => 
+                    <Filter style={{whiteSpace: 'nowrap', fontSize: '3vw'}} key={deal}>{deal}</Filter>
+                )}
+                {types.map((type) => 
+                    <Filter style={{whiteSpace: 'nowrap', fontSize: '3vw'}} key={type}>{type}</Filter>
+                )}
+            </div>
+            <Divider style={{marginBottom: '3%'}}/>
         </div>
     )
 }
