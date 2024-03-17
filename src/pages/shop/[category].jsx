@@ -78,7 +78,7 @@ function Category(props) {
     }
     return (
         <ShopSoles category={props.CATEGORY} deals={props.DEALS}>
-            <Header style={{marginBottom: '-3%', justifyContent: 'flex-start'}}>Shopping</Header>
+            {(width < 700) && <Header style={{paddingTop: '3%', justifyContent: 'flex-start'}}>Shopping</Header>}
             {(width < 700) && <InlineMenu category={props.CATEGORY} deals={props.DEALS}/>}
             <div className={styles.grid}>
                 {images.map((image) => 

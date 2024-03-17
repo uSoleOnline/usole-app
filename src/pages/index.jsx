@@ -52,7 +52,9 @@ function Home() {
                 </div>
             </div>
             <div className={styles.section}>
-                <Header style={{marginBottom: '-3%'}}>All your {(width < 700) && <br/>} favorite models.</Header>
+                {(width < 700) ? <Header style={{fontSize: '8.5vw', marginBottom: '-3%'}}>All your {(width < 700) && <br/>} favorite models.</Header>
+                    : <Header style={{marginBottom: '-3%'}}>All your {(width < 700) && <br/>} favorite models.</Header>
+                }
                 <Description>
                     Unique outsoles crafted for every popular shoe model, across all your favorite brands.
                 </Description>

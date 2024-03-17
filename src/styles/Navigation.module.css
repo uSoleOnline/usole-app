@@ -94,19 +94,15 @@
     font-family: OpenSauce;
     text-transform: capitalize;
 }
-    .filter:hover {
-        cursor: pointer;
-        color: #00C455;
-    }
 .check {
     margin-bottom: 22px;
-    font-size: 87.5%;
+    font-size: 1.25vw;
     font-family: OpenSauce;
     text-transform: capitalize;
 }
-    .check:hover {
+    .check:hover, .filter:hover {
+        color: #00C455;
         cursor: pointer;
-        text-decoration: underline;
     }
 .arrowDown {
     width: 0;  
