@@ -47,7 +47,7 @@ function About() {
             <div className={styles.section}>
                 <Header>Our foundation</Header>
                 <Description>
-                    Our team, initially formed by Jacob Lee and Yash Pandit, arose from a shared concern for the environment and the duo's love for basketball. Their shared hobbie forced them to address the glaring problem of degrading outsoles. Realizing the environmental and financial implications of this problem, Jacob Lee took the role of designing the outsole and formulating the adhesive for uSole.
+                    Our team, initially formed by Jacob Lee and Yash Pandit, arose from a shared concern for the environment and the duo's love for basketball. Realizing the environmental and financial implications of excessive shoe waste, Yash saw the need for cost effective, eco-friendly shoe sole replacements. Jacob Lee took the role of designing the outsole and formulating the adhesive for uSole.
                 </Description>
             </div>
             <div className={styles.section} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>

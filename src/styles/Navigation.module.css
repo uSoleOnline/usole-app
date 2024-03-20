@@ -60,7 +60,7 @@
     object-fit: contain;
     max-height: 110%;
 }
-    .logoImage:hover {
+    .logoImage:hover, .footerLogo:hover {
         filter: brightness(75%);
     }
 .section {
@@ -100,7 +100,7 @@
     font-family: OpenSauce;
     text-transform: capitalize;
 }
-    .check:hover, .filter:hover {
+    .check:hover {
         color: #00C455;
         cursor: pointer;
     }
@@ -137,11 +137,42 @@
     border: 0.5px solid #CFCFCF;
 }
 .footer {
-    background-color: #000000;
-    padding: 5%;
-    color: #FFFFFF;
     display: flex;
     justify-content: space-between;
+}
+.footerSection {
+    display: flex;
+    flex-direction: column;
+}
+.footerLogo {
+    background-color: #000000;
+    width: 23%;
+    border: none;
+}
+.links {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.copyright {
+    margin: 0px;
+    width: 100%;
+    font-family: OpenSauce;
+    font-size: 100%;
+    text-align: center;
     position: relative;
-    bottom: 0;
+    bottom: 0%;
+}
+@media (max-width: 700px) {
+    .footer {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .footerLogo {
+        width: 40%;
+        align-self: center;
+    }
+    .links {
+        width: 100%;
+    }
 }

@@ -305,8 +305,42 @@ export function InlineMenu({ category, deals }) {
 }
 
 export function Footer() {
+    const router = useRouter()
     return (
-        <div>Footer</div>
+        <div style={{display: 'flex', flexDirection: 'column', padding: '5%', rowGap: '10px'}}>
+            <div className={styles.footer}>
+                <div className={styles.links}>
+                    <div className={styles.footerSection}>
+                        <NavButton text='Home' location='/' style={{textAlign: 'left'}}/>
+                        <NavButton text='About' location='/about' style={{textAlign: 'left'}}/>
+                        <NavButton text='Mission' location='/mission' style={{textAlign: 'left'}}/>
+                        <NavButton text='Impact' location='/impact' style={{textAlign: 'left'}}/>
+                    </div>
+                    <div className={styles.footerSection}>
+                        <NavButton text='Shop' location='/shop' style={{textAlign: 'left'}}/>
+                        <NavButton text='Kits' location={{pathname: '/shop/[category]', query: {category: 'kits'}}} style={{textAlign: 'left'}}/>
+                        <NavButton text='Outsoles' location={{pathname: '/shop/[category]', query: {category: 'outsoles'}}} style={{textAlign: 'left'}}/>
+                    </div>
+                    <div className={styles.footerSection}>
+                        <NavButton text='Contact' location='/' style={{textAlign: 'left'}}/>
+                        <NavButton text='@usole.official' location='/about' style={{textAlign: 'left'}}/>
+                        <NavButton text='contact.usole@gmail.com' location='/mission' style={{textAlign: 'left'}}/>
+                    </div>
+                </div>
+                <button className={styles.footerLogo} onClick={() => router.push(('/'))}>
+                    <Image
+                        priority
+                        width={100}
+                        height={50}
+                        layout='intrinsic'
+                        src='/icons/logo.png'
+                        alt='logo'
+                        style={{width: '100%', objectFit: 'contain'}}
+                    />
+                </button>
+            </div>
+            <p className={styles.copyright}>© 2024 Copyright uSole. All rights reserved.</p>
+        </div>
     )
 }
 

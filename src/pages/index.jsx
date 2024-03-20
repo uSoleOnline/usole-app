@@ -22,9 +22,9 @@ function Home() {
                     Shop Now
                 </Button>
             </div>
-            <div className={styles.singleImageSection} style={{paddingTop: '0%', backgroundColor: '#000000', color: '#FFFFFF'}}>
+            <div className={styles.singleImageSection} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
                 <SectionImage src='/product/sole006.gif' webWidth='50%' mobileWidth='100%'/>
-                <div style={{width: '100%', marginTop: '-24%'}}>
+                <div style={{width: '100%'}}>
                     <Header>Boosts<br/>strength</Header>
                     <Description>
                         Our designs increase ankle support and traction and provide cushioning for the foot, generally enhancing performance and comfort, all while guaranteeing success at any sport.
